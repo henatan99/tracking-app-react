@@ -1,4 +1,3 @@
-import { func } from 'prop-types';
 import { SET_MESSAGE, CLEAR_MESSAGE } from '../actions/actionTypes'
 
 const initialState = {};
