@@ -1,4 +1,3 @@
-import { loadOptions } from '@babel/core';
 import {
     REGISTER_SUCCESS,
     REGISTER_FAIL,
