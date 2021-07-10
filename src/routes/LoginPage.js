@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import LoginForm from '../containers/loginForm';
 
 const LoginPage = () => (
