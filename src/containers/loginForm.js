@@ -1,16 +1,16 @@
 import axios from 'axios';
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+// import PropTypes from 'prop-types';
 // import { useHistory } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { loginUser } from '../redux/actions/user';
-// import login from '../redux/reducers/login';
 
 const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [user, setUser] = useState({});
+  const dispatch = useDispatch();
 
-  function login(username) {
+  function login() {
     axios({
       method: 'POST',
       url: 'https://pure-tundra-23506.herokuapp.com/users',
@@ -30,10 +30,11 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     login(username);
-    useEffect(() => {
-      dispatch(loginUser(user));
-    }, []);  
   };
+
+  useEffect(() => {
+    dispatch(loginUser(user));
+  }, []);
 
   return (
     <div className="login">
@@ -51,14 +52,6 @@ const LoginForm = () => {
       </form>
     </div>
   );
-};
-
-LoginForm.defaultProps = {
-  loginUser: null,
-};
-
-LoginForm.propTypes = {
-  loginUser: PropTypes.func,
 };
 
 const mapDispatchToProps = (dispatch) => ({
