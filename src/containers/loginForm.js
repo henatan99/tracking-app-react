@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 // import PropTypes from 'prop-types';
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
 import { loginUser } from '../redux/actions/user';
 
@@ -9,6 +9,7 @@ const LoginForm = () => {
   const [username, setUsername] = useState('');
   const [user, setUser] = useState({});
   const dispatch = useDispatch();
+  const history = useHistory();
 
   function login() {
     axios({
@@ -21,6 +22,7 @@ const LoginForm = () => {
       .then((response) => {
         console.log(response.data);
         setUser(response.data);
+        history.push(`/measurement/${response.data}`);
       })
       .catch((error) => {
         console.log(error);
