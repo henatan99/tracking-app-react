@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm should render with given state from Redux store 1`] = `
+<div
+  className="login"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <h1>
+      Login Page
+    </h1>
+    <input
+      onChange={[Function]}
+      placeholder="username"
+      type="text"
+      value=""
+    />
+    <br />
+    <button
+      type="submit"
+    >
+      Login
+    </button>
+    <h2>
+      sorry
+    </h2>
+  </form>
+</div>
+`;
