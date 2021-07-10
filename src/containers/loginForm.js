@@ -1,14 +1,13 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-// import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
-import { connect, useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import { loginUser } from '../redux/actions/user';
 
-const LoginForm = () => {
+const LoginForm = ({ loginUser }) => {
   const [username, setUsername] = useState('');
   const [user, setUser] = useState({});
-  const dispatch = useDispatch();
   const history = useHistory();
 
   function login() {
@@ -22,7 +21,10 @@ const LoginForm = () => {
       .then((response) => {
         console.log(response.data);
         setUser(response.data);
-        history.push(`/measurement/${response.data}`);
+        alert(response.data.id);
+        loginUser(response.data);
+        alert(response.data.id);
+        history.push(`/measurement/${response.data.id}`);
       })
       .catch((error) => {
         console.log(error);
@@ -33,10 +35,6 @@ const LoginForm = () => {
     e.preventDefault();
     login(username);
   };
-
-  useEffect(() => {
-    dispatch(loginUser(user));
-  }, []);
 
   return (
     <div className="login">
@@ -54,6 +52,14 @@ const LoginForm = () => {
       </form>
     </div>
   );
+};
+
+LoginForm.defaultProps = {
+  loginUser: null,
+};
+
+LoginForm.propTypes = {
+  loginUser: PropTypes.func,
 };
 
 const mapDispatchToProps = (dispatch) => ({

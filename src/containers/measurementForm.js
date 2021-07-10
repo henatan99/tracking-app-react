@@ -3,7 +3,13 @@ import { connect, useSelector } from 'react-redux';
 
 const MeasurementForm = () => {
   const state = useSelector((state) => state);
-  const { user } = state.login;
+  const { user } = state.user;
+  console.log(user);
+
+  const handleSubmit = () => {
+    alert('submitted');
+  };
+
   return (
     <div>
       <h1>User Detail</h1>
@@ -20,7 +26,7 @@ const MeasurementForm = () => {
 };
 
 const mapStateToProps = (state) => ({
-  login: state.login,
+  user: state.user,
 });
 
 export default connect(mapStateToProps)(MeasurementForm);

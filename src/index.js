@@ -7,20 +7,17 @@ import reportWebVitals from './reportWebVitals';
 import configureStore from './redux/store/configStore';
 
 const initialState = {
-  login: {
-    user: {},
-  },
-  logout: {
-    user: {},
-  },
+  user: {},
 };
 
 const store = configureStore(initialState);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
   document.getElementById('root'),
 );
 
