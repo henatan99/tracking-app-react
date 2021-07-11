@@ -7,26 +7,26 @@ import MeasurementForm from '../../containers/measurementForm';
 const mockStore = configureStore([]);
 
 describe('MeasurementForm', () => {
-    let store;
-    let component;
+  let store;
+  let component;
 
-    beforeEach(() => {
-        store = mockStore({
-            myState: 'sample text',
-        });
-
-        component = renderer.create(
-            <Provider store={store}>
-                <MeasurementForm />
-            </Provider>
-        )
+  beforeEach(() => {
+    store = mockStore({
+      myState: 'sample text',
     });
 
-    it('should render with given state from Redux store', () => {
-        expect(component.toJSON()).toMatchSnapshot();
-    });
+    component = renderer.create(
+      <Provider store={store}>
+        <MeasurementForm />
+      </Provider>,
+    );
+  });
 
-    it('should dispatch an action on button click', () => {
+  it('should render with given state from Redux store', () => {
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 
-    });
-})
+  it('should dispatch an action on button click', () => {
+
+  });
+});

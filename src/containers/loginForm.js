@@ -3,11 +3,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { loginUser } from '../redux/actions/user';
+import { loginUser } from '../redux/actions';
 
 const LoginForm = ({ loginUser }) => {
   const [username, setUsername] = useState('');
-  const [user, setUser] = useState({});
   const history = useHistory();
 
   function login() {
@@ -20,8 +19,6 @@ const LoginForm = ({ loginUser }) => {
     })
       .then((response) => {
         console.log(response.data);
-        setUser(response.data);
-        alert(response.data.id);
         loginUser(response.data);
         alert(response.data.id);
         history.push(`/measurement/${response.data.id}`);
@@ -33,7 +30,8 @@ const LoginForm = ({ loginUser }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(username);
+    login();
+    setUsername('');
   };
 
   return (
@@ -48,7 +46,6 @@ const LoginForm = ({ loginUser }) => {
         />
         <br />
         <button type="submit">Login</button>
-        <h2>{user.id || 'sorry'}</h2>
       </form>
     </div>
   );
