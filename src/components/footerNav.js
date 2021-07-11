@@ -1,3 +1,5 @@
+import React from 'react';
+
 const FooterNav = () => (
   <nav className="footer-nav">
     <ul className="footer-nav-ul">
@@ -10,7 +12,7 @@ const FooterNav = () => (
         <span>Track it</span>
       </li>
       <li className="footer-nav-li">
-        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js" />
+        <span className="iconify" data-icon="carbon:in-progress" data-inline="false" />
         <span>Your progress</span>
       </li>
       <li className="footer-nav-li">

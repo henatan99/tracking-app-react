@@ -65,3 +65,49 @@ code {
   color: white;
   background-color: #286dcf;
 }
+
+
+/* footer nav */
+.footer-nav {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer-nav-ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-block-start: 0;
+  padding-inline-start: 0;
+  margin-block-end: 0;
+}
+
+.footer-nav-li {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: gray;
+  font-size: 10px;
+  padding: 1rem 0 1rem 0;
+  color: white;
+  font-weight: 700;
+}
+
+/* Measurement */
+
+.measurement-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  background-color: rgb(214, 202, 202);
+}
+
+.measurement-header {
+  background-color: rgb(156, 156, 231);
+}
