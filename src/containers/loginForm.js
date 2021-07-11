@@ -36,16 +36,17 @@ const LoginForm = ({ loginUser }) => {
 
   return (
     <div className="login">
-      <form onSubmit={handleSubmit}>
-        <h1>Login Page</h1>
+      <h1 className="login-header">Login Page</h1>
+      <form onSubmit={handleSubmit} className="login-form">
         <input
           type="text"
           value={username}
           placeholder="username"
           onChange={(e) => setUsername(e.target.value)}
+          className="login-input"
         />
         <br />
-        <button type="submit">Login</button>
+        <button type="submit" className="login-button">Login</button>
       </form>
     </div>
   );

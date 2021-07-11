@@ -25,3 +25,43 @@ code {
     'Courier New',
     monospace;
 }
+
+.login-page {
+  background-color: #41b5e8;
+  height: 100vh;
+  padding-top: 20vh;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form {
+  background-color: #d6d8dc;
+  width: 60%;
+  padding: 4rem 0 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 30px;
+}
+
+.login-header {
+  color: white;
+}
+
+.login-input {
+  width: 60%;
+  font-size: 16px;
+}
+
+.login-button {
+  width: 60%;
+  font-size: 16px;
+  padding: 5px;
+  color: white;
+  background-color: #286dcf;
+}
