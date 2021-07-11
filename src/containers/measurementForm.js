@@ -8,6 +8,7 @@ const MeasurementForm = ({ createMeasurement }) => {
   const state = useSelector((state) => state);
   console.log(state.user);
   const [value, setValue] = useState(0);
+  // const [measurementId, setMeasurementId] = useState(0);
 
   function measurement() {
     axios({
@@ -15,6 +16,7 @@ const MeasurementForm = ({ createMeasurement }) => {
       url: `https://pure-tundra-23506.herokuapp.com/users/${state.user.id}/measureds`,
       data: {
         value,
+        measurement_id: 1,
       },
     })
       .then((response) => {
