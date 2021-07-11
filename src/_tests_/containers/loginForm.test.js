@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
 import LoginForm from '../../containers/loginForm';
-import { loginUser } from '../../redux/actions/user';
+import { loginUser } from '../../redux/actions';
 
 const mockStore = configureStore([]);
 
