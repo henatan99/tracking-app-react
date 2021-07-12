@@ -7,6 +7,8 @@ import './App.css';
 import LoginPage from './routes/LoginPage';
 import MeasurementPage from './routes/MeasurementPage';
 import MorePage from './routes/MorePage';
+import ProgressPage from './routes/ProgressPage';
+import TrackPage from './routes/TrackPage';
 
 function App() {
   const state = useSelector((state) => state);
@@ -24,6 +26,8 @@ function App() {
         <Switch>
           <Route path="/" exact component={LoginPage} />
           <Route path="/:id/measurement" exact component={MeasurementPage} />
+          <Route path="/:id/track" exact component={TrackPage} />
+          <Route path="/:id/progress" exact component={ProgressPage} />
           <Route path="/:id/more" exact component={MorePage} />
         </Switch>
       </div>

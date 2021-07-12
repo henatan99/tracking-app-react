@@ -12,13 +12,13 @@ const FooterNav = ({ user }) => (
         </Link>
       </li>
       <li className="footer-nav-li">
-        <Link to={`/${user.id}/measurement`}>
+        <Link to={`/${user.id}/track`}>
           <span className="iconify" data-icon="iconoir:stat-up" data-inline="false" />
           <span>Track it</span>
         </Link>
       </li>
       <li className="footer-nav-li">
-        <Link to={`/${user.id}/measurement`}>
+        <Link to={`/${user.id}/progress`}>
           <span className="iconify" data-icon="carbon:in-progress" data-inline="false" />
           <span>Your progress</span>
         </Link>
