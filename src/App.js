@@ -1,14 +1,22 @@
-import React from 'react';
-// import { connect, useSelector } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { connect, useSelector } from 'react-redux';
+import {
+  BrowserRouter as Router, Switch, Route, useHistory,
+} from 'react-router-dom';
 import './App.css';
 import LoginPage from './routes/LoginPage';
 import MeasurementPage from './routes/MeasurementPage';
+import MorePage from './routes/MorePage';
 
 function App() {
-  // const state = useSelector((state) => state);
-  // const { user } = state.user;
-  // const { measurements } = state.measurements;
+  const state = useSelector((state) => state);
+  const history = useHistory();
+
+  useEffect(() => {
+    if (!state.user) {
+      history.push('/');
+    }
+  });
 
   return (
     <Router>
@@ -16,15 +24,16 @@ function App() {
         <Switch>
           <Route path="/" exact component={LoginPage} />
           <Route path="/:id/measurement" exact component={MeasurementPage} />
+          <Route path="/:id/more" exact component={MorePage} />
         </Switch>
       </div>
     </Router>
   );
 }
 
-// const mapStateToProps = (state) => ({
-//   user: state.user,
-//   // measurements: state.measurements,
-// });
-export default App;
-// export default connect(mapStateToProps)(App);
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+
+// export default App;
+export default connect(mapStateToProps)(App);
