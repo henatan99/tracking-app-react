@@ -87,6 +87,9 @@ code {
 
 .footer-nav-li {
   width: 25%;
+}
+
+.footer-nav-li a {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,6 +111,44 @@ code {
   background-color: #f3f4f6;
 }
 
-.measurement-header {
+.measurement-page-header {
   background-color: #41b5e8;
+  color: white;
+}
+
+.measurement-header {
+  background-color: #fdfdff;
+  height: fit-content;
+  padding: 1rem 0 1rem 0;
+  color: #c1c6cd;
+}
+
+.measurement-header h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.measurement-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.measurement-form {
+  width: 14rem;
+  height: 14rem;
+  border-radius: 7rem;
+  background-color: #fafbfb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.measurement-input {
+  width: 8rem;
+  font-size: 3rem;
+  align-items: center;
 }

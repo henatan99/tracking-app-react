@@ -35,12 +35,15 @@ const MeasurementForm = ({ createMeasurement }) => {
 
   return (
     <div className="measurement">
-      <h3>{`${state.user.username}, Measure your`}</h3>
-
-      <form onSubmit={handleSubmit} className="measurement-form">
-        <input type="text" onChange={(e) => setValue(e.target.value)} className="measurement-input" />
-        <button type="submit">Submit</button>
-      </form>
+      <header className="measurement-header">
+        <h3>{`${state.user.username}, Measure your`}</h3>
+      </header>
+      <div className="measurement-form-wrapper">
+        <form onSubmit={handleSubmit} className="measurement-form">
+          <input type="text" onChange={(e) => setValue(e.target.value)} className="measurement-input" />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   );
 };

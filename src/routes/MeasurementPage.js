@@ -4,8 +4,8 @@ import FooterNav from '../components/footerNav';
 
 const MeasurementPage = () => (
   <div className="measurement-page">
-    <header className="measurement-header">
-      <h3 className="">Add measurement</h3>
+    <header className="measurement-page-header">
+      <h3>Add measurement</h3>
     </header>
     <MeasurementForm />
     <FooterNav />
