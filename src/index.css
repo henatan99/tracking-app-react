@@ -90,7 +90,7 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: gray;
+  background-color: #313944;
   font-size: 10px;
   padding: 1rem 0 1rem 0;
   color: white;
@@ -105,9 +105,9 @@ code {
   flex-direction: column;
   height: 100vh;
   position: relative;
-  background-color: rgb(214, 202, 202);
+  background-color: #f3f4f6;
 }
 
 .measurement-header {
-  background-color: rgb(156, 156, 231);
+  background-color: #41b5e8;
 }

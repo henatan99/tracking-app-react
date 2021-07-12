@@ -1,26 +1,39 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const FooterNav = () => (
+const FooterNav = ({ id }) => (
   <nav className="footer-nav">
     <ul className="footer-nav-ul">
       <li className="footer-nav-li">
-        <span className="iconify" data-icon="fluent-data-bar-vertical-add-24-filled" data-inline="false" />
-        <span>Add measure</span>
+        <Link to={`/measurement/${id}`}>
+          <span className="iconify" data-icon="fluent-data-bar-vertical-add-24-filled" data-inline="false" />
+          <span>Add measure</span>
+        </Link>
       </li>
       <li className="footer-nav-li">
-        <span className="iconify" data-icon="iconoir:stat-up" data-inline="false" />
-        <span>Track it</span>
+        <Link to={`/measurement/${id}`}>
+          <span className="iconify" data-icon="iconoir:stat-up" data-inline="false" />
+          <span>Track it</span>
+        </Link>
       </li>
       <li className="footer-nav-li">
-        <span className="iconify" data-icon="carbon:in-progress" data-inline="false" />
-        <span>Your progress</span>
+        <Link to={`/measurement/${id}`}>
+          <span className="iconify" data-icon="carbon:in-progress" data-inline="false" />
+          <span>Your progress</span>
+        </Link>
       </li>
       <li className="footer-nav-li">
-        <span className="iconify" data-icon="bi:three-dots" data-inline="false" />
-        <span>More</span>
+        <Link to={`/measurement/${id}`}>
+          <span className="iconify" data-icon="bi:three-dots" data-inline="false" />
+          <span>More</span>
+        </Link>
       </li>
     </ul>
   </nav>
 );
+
+FooterNav.propTypes = {
+  id: PropTypes.number,
+};
 
 export default FooterNav;
