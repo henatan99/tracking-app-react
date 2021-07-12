@@ -3,35 +3,54 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { loginUser } from '../redux/actions';
+import { loginUser, setMeasurements } from '../redux/actions';
+import { saveState } from '../redux/services/localStorage';
 
 const LoginForm = ({ loginUser }) => {
   const [username, setUsername] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
 
   function login() {
-    axios({
+    setIsLoading(true);
+
+    const createUserRequest = axios({
       method: 'POST',
       url: 'https://pure-tundra-23506.herokuapp.com/users',
       data: {
         username,
       },
-    })
-      .then((response) => {
-        console.log(response.data);
-        loginUser(response.data);
-        alert(response.data.id);
-        history.push(`/measurement/${response.data.id}`);
-      })
-      .catch((error) => {
-        console.log(error);
+    });
+
+    const featchMeasurementsRequest = axios({
+      method: 'GET',
+      url: 'https://pure-tundra-23506.herokuapp.com/measurements',
+    });
+
+    axios.all([createUserRequest, featchMeasurementsRequest])
+      .then(axios.spread((...responses) => {
+        setIsLoading(false);
+        console.log(responses[0].data);
+        console.log(responses[1].data);
+        loginUser(responses[0].data);
+        setMeasurements(responses[1].data);
+        alert(responses[0].data.id);
+        saveState(responses[0].data, 'user');
+        saveState(responses[1].data, 'measurements');
+        history.push(`${responses[0].data.id}/measurement`);
+      // use/access the results
+      })).catch((errors) => {
+      // react on errors.
+        console.log(errors);
       });
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login();
-    setUsername('');
+    if (username.length) {
+      login();
+      setUsername('');
+    }
   };
 
   return (
@@ -46,7 +65,7 @@ const LoginForm = ({ loginUser }) => {
           className="login-input"
         />
         <br />
-        <button type="submit" className="login-button">Login</button>
+        <button type="submit" className="login-button">{!isLoading ? 'Login' : 'Loading...'}</button>
       </form>
     </div>
   );

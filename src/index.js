@@ -5,9 +5,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import configureStore from './redux/store/configStore';
+import { loadState } from './redux/services/localStorage';
+
+const user = loadState('user');
+const measurement = loadState('measurements');
 
 const initialState = {
-  user: {},
+  user,
+  measurements: measurement,
 };
 
 const store = configureStore(initialState);

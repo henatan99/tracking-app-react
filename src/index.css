@@ -98,6 +98,11 @@ code {
   padding: 1rem 0 1rem 0;
   color: white;
   font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-nav-li a :focus {
+  background-color: #5bb5e5;
 }
 
 /* Measurement */
@@ -148,7 +153,17 @@ code {
 }
 
 .measurement-input {
-  width: 8rem;
+  width: 10rem;
   font-size: 3rem;
   align-items: center;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.measurement-button {
+  border: none;
+  background-color: #fafbfb;
+  font-size: 3rem;
+  color: #41b5e8;
 }

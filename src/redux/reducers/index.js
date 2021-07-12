@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
-import user from './user';
+import user from './measurements';
+import measurements from './user';
 
 export default combineReducers({
-  user,
+  user, measurements,
 });
