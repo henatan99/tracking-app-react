@@ -9,6 +9,7 @@ import MeasurementPage from './routes/MeasurementPage';
 import MorePage from './routes/MorePage';
 import ProgressPage from './routes/ProgressPage';
 import TrackPage from './routes/TrackPage';
+import MeasuredsPage from './routes/MeasuredsPage';
 
 function App() {
   const state = useSelector((state) => state);
@@ -29,6 +30,7 @@ function App() {
           <Route path="/:id/track" exact component={TrackPage} />
           <Route path="/:id/progress" exact component={ProgressPage} />
           <Route path="/:id/more" exact component={MorePage} />
+          <Route path="/:id/measureds" exact component={MeasuredsPage} />
         </Switch>
       </div>
     </Router>

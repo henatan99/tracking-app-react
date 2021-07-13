@@ -2,22 +2,21 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { createMeasurement } from '../redux/actions';
 
 const MeasurementForm = ({ createMeasurement, user, measurements }) => {
   // const state = useSelector((state) => state);
-  const { id } = useParams();
-  // console.log(state.user);
+  // const { id } = useParams();
+  const history = useHistory();
   const [value, setValue] = useState(0);
   const [measurementId, setMeasurementId] = useState(1);
   const len = measurements.length;
-  alert(len);
 
   function measurement() {
     axios({
       method: 'POST',
-      url: `https://pure-tundra-23506.herokuapp.com/users/${id}/measureds`,
+      url: `https://pure-tundra-23506.herokuapp.com/users/${user.id}/measureds`,
       data: {
         value,
         measurement_id: measurementId,
@@ -35,6 +34,7 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
     e.preventDefault();
     measurement();
     setValue(0.00);
+    history.push(`/${user.id}/measureds`);
   };
 
   const handleForward = (e) => {
@@ -86,6 +86,7 @@ MeasurementForm.defaultProps = {
 MeasurementForm.propTypes = {
   createMeasurement: PropTypes.func,
   user: PropTypes.shape({
+    id: PropTypes.number,
     username: PropTypes.string,
   }),
   measurements: PropTypes.instanceOf(Array),

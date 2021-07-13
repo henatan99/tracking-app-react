@@ -7,8 +7,6 @@ import FooterNav from '../components/footerNav';
 
 const MeasurementPage = () => {
   const state = useSelector((state) => state);
-  console.log(state.user);
-  console.log(state.measurements);
 
   return (
     <div className="measurement-page">
