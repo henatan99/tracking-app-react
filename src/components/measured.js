@@ -1,34 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+import { Link } from 'react-router-dom';
 
 const Measured = ({
-  name, measured, date, diff,
+  name, measured, date, diff, progressVal, user,
 }) => (
-  <div>
-    <span className="progress-circle" />
-    <div>
-      <date>
-        {' '}
-        {name}
-        {' '}
-      </date>
-      <date>
+  <Link to={`/${user.id}/measureds_by_date`} className="measured">
+    <div style={{ width: 50, height: 50 }}>
+      <CircularProgressbar value={progressVal} text={`${progressVal}%`} />
+    </div>
+    <div className="measured-left">
+      <span className="measure-date">
         {' '}
         {date}
         {' '}
-      </date>
-      <span className="measured">
-        {' '}
-        {measured}
-        {' '}
       </span>
+      <div className="name-measured-wrapper">
+        <span className="measure-name">
+          {' '}
+          {name}
+          {' '}
+        </span>
+        <span className="measured">
+          {' '}
+          {measured}
+          {' '}
+        </span>
+      </div>
     </div>
     <span className="diff">
-      {' '}
+      {diff >= 0 ? '+ ' : '- '}
       {diff}
       {' '}
     </span>
-  </div>
+  </Link>
 );
 
 Measured.defaultProps = {
@@ -36,13 +43,19 @@ Measured.defaultProps = {
   measured: null,
   date: null,
   diff: null,
+  progressVal: null,
+  user: null,
 };
 
 Measured.propTypes = {
   name: PropTypes.string,
   measured: PropTypes.number,
-  date: PropTypes.instanceOf(Date),
+  date: PropTypes.string,
   diff: PropTypes.number,
+  progressVal: PropTypes.number,
+  user: PropTypes.shape({
+    id: PropTypes.number,
+  }),
 };
 
 export default Measured;

@@ -34,7 +34,7 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
     e.preventDefault();
     measurement();
     setValue(0.00);
-    history.push(`/${user.id}/measureds`);
+    history.push(`/${user.id}/track`);
   };
 
   const handleForward = (e) => {

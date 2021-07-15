@@ -8,6 +8,9 @@ import {
   FETCH_MEASUREDS_REQUEST,
   FETCH_MEASUREDS_SUCCESS,
   FETCH_MEASUREDS_FAILURE,
+  FETCH_FILTERED_MEASUREDS_REQUEST,
+  FETCH_FILTERED_MEASUREDS_SUCCESS,
+  FETCH_FILTERED_MEASUREDS_FAILURE,
 } from './types';
 
 export const loginUser = (user) => ({
@@ -40,5 +43,19 @@ export const fetchMeasureds = (userId) => async (dispatch) => {
     dispatch({ type: FETCH_MEASUREDS_SUCCESS, payload: response.data });
   } catch (error) {
     dispatch({ type: FETCH_MEASUREDS_FAILURE }, error);
+  }
+};
+
+export const fetchfilterByMeasurementIdMeasureds = (userId) => async (dispatch) => {
+  dispatch({ type: FETCH_FILTERED_MEASUREDS_REQUEST });
+
+  try {
+    const response = await axios.get(
+      `https://pure-tundra-23506.herokuapp.com/users/${userId}/filter_by_measurement_id_measureds`,
+    );
+
+    dispatch({ type: FETCH_FILTERED_MEASUREDS_SUCCESS, payload: response.data });
+  } catch (error) {
+    dispatch({ type: FETCH_FILTERED_MEASUREDS_FAILURE }, error);
   }
 };

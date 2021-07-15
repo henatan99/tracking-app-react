@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect, useSelector } from 'react-redux';
 import FooterNav from '../components/footerNav';
+import Measureds from '../containers/measureds';
 
 const TrackPage = () => {
   const state = useSelector((state) => state);
@@ -10,6 +11,7 @@ const TrackPage = () => {
       <header className="measurement-page-header">
         <h3>Track.It</h3>
       </header>
+      <Measureds />
       <FooterNav user={state.user} />
     </div>
   );

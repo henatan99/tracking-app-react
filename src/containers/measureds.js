@@ -15,12 +15,16 @@ const Measureds = () => {
       return <h1>loading...</h1>;
     }
 
+    console.log(state.measureds.items);
+
     return state.measureds.items.map((measured, index) => (
       <Measured
         name={state.measurements[measured.measurement_id].name}
         date={measured.created_at}
         measured={measured.value}
-        diff={measured - state.measureds.items[index - 1]}
+        diff={index > 1 ? measured.value - state.measureds.items[index - 1].value : 0}
+        progressVal={70}
+        user={state.user}
         key={measured.id || index}
       />
     ));

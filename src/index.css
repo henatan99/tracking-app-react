@@ -167,3 +167,25 @@ code {
   font-size: 3rem;
   color: #41b5e8;
 }
+
+
+/* Measured */
+.measured {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdfdfd;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.measured-date {
+
+}
+
+.name-measured-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
