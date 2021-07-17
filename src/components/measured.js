@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Measured = ({
   name, measured, date, diff, progressVal, user,
 }) => (
-  <Link to={`/${user.id}/measureds_by_date`} className="measured">
+  <Link to={`/${user.id}/measureds_by_date/${date}`} className="measured">
     <div style={{ width: 50, height: 50 }}>
       <CircularProgressbar value={progressVal} text={`${progressVal}%`} />
     </div>

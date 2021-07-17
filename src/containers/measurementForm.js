@@ -6,8 +6,6 @@ import { useHistory } from 'react-router-dom';
 import { createMeasurement } from '../redux/actions';
 
 const MeasurementForm = ({ createMeasurement, user, measurements }) => {
-  // const state = useSelector((state) => state);
-  // const { id } = useParams();
   const history = useHistory();
   const [value, setValue] = useState(0);
   const [measurementId, setMeasurementId] = useState(1);
@@ -34,7 +32,7 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
     e.preventDefault();
     measurement();
     setValue(0.00);
-    history.push(`/${user.id}/track`);
+    history.push(`/${user.id}/track/${measurementId}`);
   };
 
   const handleForward = (e) => {
@@ -58,7 +56,8 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
   return (
     <div className="measurement">
       <header className="measurement-header">
-        <h3>{`${user.username}, Measure your ${measurements[measurementId].name}`}</h3>
+        <h3>{`${user.username}, Measure your ${measurements[measurementId - 1].name}`}</h3>
+        <h3>{measurementId}</h3>
       </header>
       <div className="measurement-form-wrapper">
         <form onSubmit={handleSubmit} className="measurement-form">

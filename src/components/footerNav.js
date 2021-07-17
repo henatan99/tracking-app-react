@@ -12,7 +12,7 @@ const FooterNav = ({ user }) => (
         </Link>
       </li>
       <li className="footer-nav-li">
-        <Link to={`/${user.id}/track`}>
+        <Link to={`/${user.id}/track/1`}>
           <span className="iconify" data-icon="iconoir:stat-up" data-inline="false" />
           <span>Track it</span>
         </Link>

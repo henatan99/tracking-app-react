@@ -1,28 +1,23 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { connect, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-// import { useParams } from 'react-router-dom';
-import MeasuredsByDate from '../containers/measuredsByDate';
+import GoalForm from '../containers/goalForm';
 import FooterNav from '../components/footerNav';
 
-const MeasuredsByDatePage = () => {
+const GoalFormPage = () => {
   const state = useSelector((state) => state);
-  const { date } = useParams();
 
   return (
     <div className="measurement-page">
       <header className="measurement-page-header">
-        <h3>Track.It</h3>
+        <h3>Set your goal</h3>
       </header>
-      <h1>{ date }</h1>
-      <MeasuredsByDate />
+      <GoalForm user={state.user} measurements={state.measurements} />
       <FooterNav user={state.user} />
     </div>
   );
 };
 
-MeasuredsByDatePage.defaultProps = {
+GoalFormPage.defaultProps = {
   user: null,
   measurements: [],
 };
@@ -32,4 +27,4 @@ const mapStateToProps = (state) => ({
   measurements: state.measurements,
 });
 
-export default connect(mapStateToProps)(MeasuredsByDatePage);
+export default connect(mapStateToProps)(GoalFormPage);

@@ -1,19 +1,20 @@
-const FilterByMeasurementId = (measureds, measurementId) => {
+export const FilterByDate = (measureds, date) => {
   const filteredMeasureds = [];
-  measureds.map((measured) => {
-    if (measured.measurement_id === measurementId) {
+  measureds.forEach((measured) => {
+    if (measured.created_at.substring(0, 10) === date.substring(0, 10)) {
       filteredMeasureds.push(measured);
     }
   });
   return filteredMeasureds;
 };
 
-const FilterAllByMeasurementId = (measureds, measurements) => {
-  const filteredAllMeasureds = [];
-  measurements.each((measurement) => {
-    filteredAllMeasureds.push(FilterByMeasurementId(measureds, measurement.measurement_id));
+export const FilterByMeasurementId = (measureds, measurementId) => {
+  const filteredMeasureds = [];
+  measureds.forEach((measured) => {
+    if (measured.measurement_id === measurementId) {
+      filteredMeasureds.push(measured);
+      console.log(measured);
+    }
   });
-  return filteredAllMeasureds;
+  return filteredMeasureds;
 };
-
-export default FilterAllByMeasurementId;

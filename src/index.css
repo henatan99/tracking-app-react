@@ -189,3 +189,24 @@ code {
   flex-direction: row;
   justify-content: space-between;
 }
+
+/* measured-by-date */
+.measureds-by-date {
+  display: grid;
+  
+}
+
+.measured-by-date {
+  display: flex;
+  flex-direction: row;
+}
+
+.measured-by-date-img {
+  width: 40px;
+  height: 40px;
+}
+
+.measured-by-date-info {
+  display: flex;
+  flex-direction: column;
+}

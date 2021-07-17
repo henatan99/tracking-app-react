@@ -5,6 +5,7 @@ import {
   LOGOUT_USER,
   SET_MEASUREMENTS,
   CREATE_MEASUREMENT,
+  CREATE_GOAL,
   FETCH_MEASUREDS_REQUEST,
   FETCH_MEASUREDS_SUCCESS,
   FETCH_MEASUREDS_FAILURE,
@@ -30,6 +31,11 @@ export const setMeasurements = (measurements) => ({
 export const createMeasurement = (measured) => ({
   type: CREATE_MEASUREMENT,
   payload: measured,
+});
+
+export const createGoal = (goal) => ({
+  type: CREATE_GOAL,
+  payload: goal,
 });
 
 export const fetchMeasureds = (userId) => async (dispatch) => {

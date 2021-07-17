@@ -30,11 +30,8 @@ const LoginForm = ({ loginUser }) => {
     axios.all([createUserRequest, featchMeasurementsRequest])
       .then(axios.spread((...responses) => {
         setIsLoading(false);
-        console.log(responses[0].data);
-        console.log(responses[1].data);
         loginUser(responses[0].data);
         setMeasurements(responses[1].data);
-        alert(responses[0].data.id);
         saveState(responses[0].data, 'user');
         saveState(responses[1].data, 'measurements');
         history.push(`${responses[0].data.id}/measurement`);

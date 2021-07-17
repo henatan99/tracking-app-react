@@ -7,8 +7,8 @@ const MeasuredByDate = ({
   name, measured, icon, unit,
 }) => (
   <div className="measured-by-date">
-    <img src={icon} alt={name} />
-    <div>
+    <img src={icon} alt={name} className="measured-by-date-img" />
+    <div className="measured-by-date-info">
       <span>{name}</span>
       <span>
         {measured}

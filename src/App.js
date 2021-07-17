@@ -10,6 +10,7 @@ import MorePage from './routes/MorePage';
 import ProgressPage from './routes/ProgressPage';
 import TrackPage from './routes/TrackPage';
 import MeasuredsByDate from './routes/MeasuredsByDatePage';
+import GoalFormPage from './routes/GoalFormPage';
 
 function App() {
   const state = useSelector((state) => state);
@@ -27,10 +28,11 @@ function App() {
         <Switch>
           <Route path="/" exact component={LoginPage} />
           <Route path="/:id/measurement" exact component={MeasurementPage} />
-          <Route path="/:id/track" exact component={TrackPage} />
+          <Route path="/:id/track/:mid" exact component={TrackPage} />
           <Route path="/:id/progress" exact component={ProgressPage} />
           <Route path="/:id/more" exact component={MorePage} />
-          <Route path="/:id/measureds_by_date" exact component={MeasuredsByDate} />
+          <Route path="/:id/measureds_by_date/:date" exact component={MeasuredsByDate} />
+          <Route path="/:id/your-goal" exact component={GoalFormPage} />
         </Switch>
       </div>
     </Router>
