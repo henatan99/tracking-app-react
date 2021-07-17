@@ -9,8 +9,10 @@ const GoalForm = ({ createGoal, user, measurements }) => {
   const [dayOne, setDayOne] = useState();
   const [dayLast, setDayLast] = useState();
   const [measurementId, setMeasurementId] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
 
   function settingGoal() {
+    setIsLoading(true);
     axios({
       method: 'POST',
       url: `https://pure-tundra-23506.herokuapp.com/users/${user.id}/goals`,
@@ -23,14 +25,20 @@ const GoalForm = ({ createGoal, user, measurements }) => {
     })
       .then((response) => {
         createGoal(response.data);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);
       });
   }
 
+  function formatDate(date) {
+    return date.split('/').reverse().join('/');
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    alert(dayOne);
     settingGoal();
     setQuantity(null);
     setDayOne(null);
@@ -50,9 +58,9 @@ const GoalForm = ({ createGoal, user, measurements }) => {
           ))}
         </select>
         <input type="text" onChange={(e) => setQuantity(e.target.value)} />
-        <input type="date" onChange={(e) => setDayOne(e.target.value)} />
-        <input type="date" onChange={(e) => setDayLast(e.target.value)} />
-        <button type="submit">Submit</button>
+        <input type="date" onChange={(e) => setDayOne(formatDate(e.target.value))} />
+        <input type="date" onChange={(e) => setDayLast(formatDate(e.target.value))} />
+        <button type="submit">{!isLoading ? 'Submit' : 'Loading...'}</button>
       </form>
     </div>
   );
