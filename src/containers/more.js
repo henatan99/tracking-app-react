@@ -7,7 +7,7 @@ const More = ({ user }) => (
     <h1>{user.username}</h1>
     <ul>
       <li>
-        <Link to="/your-goal">Your Goal</Link>
+        <Link to={`/${user.id}/setgoal`}>Your Goal</Link>
       </li>
       <li>
         <Link to="/logout">Log Out</Link>

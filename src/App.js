@@ -32,7 +32,7 @@ function App() {
           <Route path="/:id/progress" exact component={ProgressPage} />
           <Route path="/:id/more" exact component={MorePage} />
           <Route path="/:id/measureds_by_date/:date" exact component={MeasuredsByDate} />
-          <Route path="/:id/your-goal" exact component={GoalFormPage} />
+          <Route path="/:id/setgoal" exact component={GoalFormPage} />
         </Switch>
       </div>
     </Router>

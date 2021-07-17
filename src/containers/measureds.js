@@ -3,6 +3,7 @@ import { connect, useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { fetchfilterByMeasurementIdMeasureds } from '../redux/actions';
 import Measured from '../components/measured';
+import MeasuredsSelector from '../components/measuerdsSelector';
 
 const Measureds = () => {
   const dispatch = useDispatch();
@@ -37,7 +38,10 @@ const Measureds = () => {
     return <h3>No list</h3>;
   };
   return (
-    <div>{ renderMeasureds() }</div>
+    <div>
+      <div>{ renderMeasureds() }</div>
+      <MeasuredsSelector user={state.user} measurements={state.measurements} />
+    </div>
   );
 };
 
