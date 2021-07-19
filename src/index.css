@@ -210,3 +210,10 @@ code {
   display: flex;
   flex-direction: column;
 }
+
+/* Progress Bar */
+.progress-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
