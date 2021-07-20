@@ -29,6 +29,8 @@ function App() {
           saveState(data, 'user');
         });
     }
+    console.log(localStorage.getItem('user'));
+    console.log(localStorage.getItem('measurements'));
   });
 
   return (
