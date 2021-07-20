@@ -8,15 +8,15 @@ import { saveState } from '../redux/services/localStorage';
 
 const SignupForm = ({ loginUser }) => {
   const [username, setUsername] = useState('');
-  const [loggingIn, setLoggingIn] = useState(false);
+  const [signingUp, setSigningUp] = useState(false);
   const history = useHistory();
 
-  function login() {
-    setLoggingIn(true);
+  function signup() {
+    setSigningUp(true);
 
     const createUserRequest = axios({
       method: 'POST',
-      url: 'https://pure-tundra-23506.herokuapp.com/login',
+      url: 'https://pure-tundra-23506.herokuapp.com/users',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
@@ -33,16 +33,12 @@ const SignupForm = ({ loginUser }) => {
 
     axios.all([createUserRequest, featchMeasurementsRequest])
       .then(axios.spread((...responses) => {
-        setLoggingIn(false);
-        console.log(responses[0]);
-        console.log(responses[1]);
-        console.log(responses[0].data.user.id);
+        setSigningUp(false);
         loginUser(responses[0].data);
         setMeasurements(responses[1].data);
         saveState(responses[0].data, 'user');
         saveState(responses[1].data, 'measurements');
-        localStorage.setItem('token', responses[0].data.jwt);
-        history.push(`${responses[0].data.user.id}/measurement`);
+        history.push(`${responses[0].data.id}/measurement`);
       })).catch((errors) => {
         console.log(errors);
       });
@@ -51,14 +47,14 @@ const SignupForm = ({ loginUser }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (username.length) {
-      login();
+      signup();
       setUsername('');
     }
   };
 
   return (
     <div className="login">
-      <h1 className="login-header">Login Page</h1>
+      <h1 className="login-header">SignUp Page</h1>
       <form onSubmit={handleSubmit} className="login-form">
         <input
           type="text"
@@ -68,7 +64,7 @@ const SignupForm = ({ loginUser }) => {
           className="login-input"
         />
         <br />
-        <button type="submit" className="login-button">{!loggingIn ? 'Login' : 'Logging in...'}</button>
+        <button type="submit" className="login-button">{!signingUp ? 'Signup' : 'Signing Up...'}</button>
       </form>
     </div>
   );

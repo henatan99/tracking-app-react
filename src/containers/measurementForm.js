@@ -12,9 +12,13 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
   const len = measurements.length;
 
   function measurement() {
+    const token = localStorage.getItem('token');
     axios({
       method: 'POST',
       url: `https://pure-tundra-23506.herokuapp.com/users/${user.id}/measureds`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
       data: {
         value,
         measurement_id: measurementId,
