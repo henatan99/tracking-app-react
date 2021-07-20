@@ -9,7 +9,6 @@ import { saveState } from '../redux/services/localStorage';
 const SignupForm = ({ loginUser }) => {
   const [username, setUsername] = useState('');
   const [signingUp, setSigningUp] = useState(false);
-  // const [userResp, setUserResp] = useState({});
   const [errors, setErrors] = useState(null);
   const history = useHistory();
 
@@ -37,10 +36,14 @@ const SignupForm = ({ loginUser }) => {
       .then(axios.spread((...responses) => {
         setSigningUp(false);
         loginUser(responses[0].data);
+        console.log(responses[0]);
         setMeasurements(responses[1].data);
         saveState(responses[0].data, 'user');
         saveState(responses[1].data, 'measurements');
-        history.push(`${responses[0].data.id}/measurement`);
+        localStorage.setItem('token', responses[0].data.jwt);
+        if (responses[0].data.user) {
+          history.push(`${responses[0].data.user.id}/measurement`);
+        }
       })).catch((errors) => {
         setSigningUp(false);
         setErrors(errors);

@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { logoutUser } from '../redux/actions';
 
 const More = ({ user }) => {
   const handleLogout = () => {
-    console.log(user);
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     localStorage.removeItem('measurements');
-    console.log(user);
+    logoutUser();
   };
 
   return (

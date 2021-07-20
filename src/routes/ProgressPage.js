@@ -6,6 +6,10 @@ import Progress from '../components/progress';
 const ProgressPage = () => {
   const state = useSelector((state) => state);
 
+  useEffect(() => {
+    dispatch(fetchfilterByMeasurementIdMeasureds(state.user.id));
+  }, []);
+
   return (
     <div className="measurement-page">
       <header className="measurement-page-header">

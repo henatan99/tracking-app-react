@@ -13,6 +13,9 @@ import {
   FETCH_FILTERED_MEASUREDS_REQUEST,
   FETCH_FILTERED_MEASUREDS_SUCCESS,
   FETCH_FILTERED_MEASUREDS_FAILURE,
+  FETCH_GOALS_REQUEST,
+  FETCH_GOALS_SUCCESS,
+  FETCH_GOALS_FAILURE,
 } from './types';
 
 export const signupUser = (user) => ({
@@ -43,6 +46,25 @@ export const createGoal = (goal) => ({
   type: CREATE_GOAL,
   payload: goal,
 });
+
+export const fetchGoals = (userId) => async (dispatch) => {
+  dispatch({ type: FETCH_GOALS_REQUEST });
+
+  try {
+    const token = localStorage.getItem('token');
+    const response = await axios.get(
+      `https://pure-tundra-23506.herokuapp.com/users/${userId}/goals`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    );
+    dispatch({ type: FETCH_GOALS_SUCCESS, payload: response.data })
+  } catch (error) {
+    dispatch({ type: FETCH_GOALS_FAILURE }, error);
+  }
+};
 
 export const fetchMeasureds = (userId) => async (dispatch) => {
   dispatch({ type: FETCH_MEASUREDS_REQUEST });
