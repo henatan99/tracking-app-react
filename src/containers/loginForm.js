@@ -6,10 +6,10 @@ import { connect } from 'react-redux';
 import { loginUser, setMeasurements } from '../redux/actions';
 import { saveState } from '../redux/services/localStorage';
 
-const SignupForm = ({ loginUser }) => {
-  const [username, setUsername] = useState('');
+const LoginForm = ({ loginUser }) => {
+  const [userResp, setUserResp] = useState({});
   const [loggingIn, setLoggingIn] = useState(false);
-  const [errors, setErrors] = useState([]);
+  const [username, setUsername] = useState('');
   const history = useHistory();
 
   function login() {
@@ -35,19 +35,18 @@ const SignupForm = ({ loginUser }) => {
     axios.all([createUserRequest, featchMeasurementsRequest])
       .then(axios.spread((...responses) => {
         setLoggingIn(false);
-        console.log(responses[0]);
-        console.log(responses[1]);
-        console.log(responses[0].data.user.id);
+        setUserResp(responses[0]);
         loginUser(responses[0].data);
         setMeasurements(responses[1].data);
         saveState(responses[0].data, 'user');
         saveState(responses[1].data, 'measurements');
         localStorage.setItem('token', responses[0].data.jwt);
-        history.push(`${responses[0].data.user.id}/measurement`);
+        if (responses[0].data.success) {
+          history.push(`${responses[0].data.user.id}/measurement`);
+        }
       })).catch((errors) => {
-        console.log(errors);
         setLoggingIn(false);
-        setErrors(errors);
+        console.log(errors);
       });
   }
 
@@ -72,21 +71,19 @@ const SignupForm = ({ loginUser }) => {
         />
         <br />
         <button type="submit" className="login-button">{!loggingIn ? 'Login' : 'Logging in...'}</button>
-        <div>
-          {errors && errors.map((error) => (
-            <span key={error}>{error}</span>
-          ))}
-        </div>
+        <span>
+          {userResp.data && userResp.data.failure ? userResp.data.failure : ''}
+        </span>
       </form>
     </div>
   );
 };
 
-SignupForm.defaultProps = {
+LoginForm.defaultProps = {
   loginUser: null,
 };
 
-SignupForm.propTypes = {
+LoginForm.propTypes = {
   loginUser: PropTypes.func,
 };
 
@@ -94,4 +91,4 @@ const mapDispatchToProps = (dispatch) => ({
   loginUser: (user) => dispatch(loginUser(user)),
 });
 
-export default connect(null, mapDispatchToProps)(SignupForm);
+export default connect(null, mapDispatchToProps)(LoginForm);

@@ -9,6 +9,8 @@ import { saveState } from '../redux/services/localStorage';
 const SignupForm = ({ loginUser }) => {
   const [username, setUsername] = useState('');
   const [signingUp, setSigningUp] = useState(false);
+  // const [userResp, setUserResp] = useState({});
+  const [errors, setErrors] = useState(null);
   const history = useHistory();
 
   function signup() {
@@ -40,6 +42,8 @@ const SignupForm = ({ loginUser }) => {
         saveState(responses[1].data, 'measurements');
         history.push(`${responses[0].data.id}/measurement`);
       })).catch((errors) => {
+        setSigningUp(false);
+        setErrors(errors);
         console.log(errors);
       });
   }
@@ -65,6 +69,9 @@ const SignupForm = ({ loginUser }) => {
         />
         <br />
         <button type="submit" className="login-button">{!signingUp ? 'Signup' : 'Signing Up...'}</button>
+        <span>
+          {errors ? 'Username Invalid or taken' : ''}
+        </span>
       </form>
     </div>
   );
