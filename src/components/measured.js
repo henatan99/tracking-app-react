@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { Link } from 'react-router-dom';
+import formattedDate from '../helpers/dateFormat';
 
 const Measured = ({
-  name, measured, date, diff, progressVal, user,
+  name, measured, date, diff, progressVal, user, unit,
 }) => (
   <Link to={`/${user.id}/measureds_by_date/${date}`} className="measured">
     <div style={{ width: 50, height: 50 }}>
@@ -14,7 +15,7 @@ const Measured = ({
     <div className="measured-left">
       <span className="measure-date">
         {' '}
-        {date}
+        {formattedDate(date)}
         {' '}
       </span>
       <div className="name-measured-wrapper">
@@ -34,6 +35,7 @@ const Measured = ({
       {diff >= 0 ? '+ ' : '- '}
       {diff}
       {' '}
+      {unit}
     </span>
   </Link>
 );
@@ -45,6 +47,7 @@ Measured.defaultProps = {
   diff: null,
   progressVal: null,
   user: null,
+  unit: '',
 };
 
 Measured.propTypes = {
@@ -56,6 +59,7 @@ Measured.propTypes = {
   user: PropTypes.shape({
     id: PropTypes.number,
   }),
+  unit: PropTypes.string,
 };
 
 export default Measured;

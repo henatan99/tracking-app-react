@@ -60,7 +60,7 @@ export const fetchGoals = (userId) => async (dispatch) => {
         },
       },
     );
-    dispatch({ type: FETCH_GOALS_SUCCESS, payload: response.data })
+    dispatch({ type: FETCH_GOALS_SUCCESS, payload: response.data });
   } catch (error) {
     dispatch({ type: FETCH_GOALS_FAILURE }, error);
   }

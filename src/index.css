@@ -168,6 +168,19 @@ code {
   color: #41b5e8;
 }
 
+.measurement-selector {
+  width: 80%;
+  background-color: #fdfdfd;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 4%;
+}
+
+.measurement-selector-btn {
+  width: 46%;
+  height: 3rem;
+}
 
 /* Measured */
 .measured {
@@ -178,6 +191,7 @@ code {
   background-color: #fdfdfd;
   padding: 0.5rem 1rem 0.5rem 1rem;
   margin-bottom: 1rem;
+  text-decoration: none;
 }
 
 .measured-date {

@@ -1,13 +1,16 @@
-import React from 'react';
-import { connect, useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import FooterNav from '../components/footerNav';
 import Progress from '../components/progress';
+import { fetchfilterByMeasurementIdMeasureds, fetchGoals } from '../redux/actions';
 
 const ProgressPage = () => {
   const state = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchfilterByMeasurementIdMeasureds(state.user.id));
+    dispatch(fetchGoals(state.user.id));
   }, []);
 
   return (

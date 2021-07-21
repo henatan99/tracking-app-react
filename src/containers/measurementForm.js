@@ -50,7 +50,7 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
 
   const handleBackward = (e) => {
     e.preventDefault();
-    if (measurementId > 0) {
+    if (measurementId > 1) {
       setMeasurementId(measurementId - 1);
     } else {
       setMeasurementId(len - 1);
@@ -71,8 +71,8 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
           </button>
         </form>
         <div className="measurement-selector">
-          <button type="button" onClick={handleBackward}>Previous</button>
-          <button type="button" onClick={handleForward}>Next</button>
+          <button className="measurement-selector-btn" type="button" onClick={handleBackward}>Previous</button>
+          <button className="measurement-selector-btn" type="button" onClick={handleForward}>Next</button>
         </div>
       </div>
       <p>{measurementId}</p>
