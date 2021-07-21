@@ -18,8 +18,8 @@ const MeasuredsByDate = () => {
     if (state.measureds.loading) {
       return <h1>loading...</h1>;
     }
-
-    const filterdByDate = FilterByDate(state.measureds.items, date);
+    console.log(state.measureds);
+    const filterdByDate = FilterByDate(state.measureds.measureds, date);
 
     return filterdByDate.map((measured, index) => (
       <MeasuredByDate

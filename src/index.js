@@ -9,10 +9,12 @@ import { loadState } from './redux/services/localStorage';
 
 const user = loadState('user');
 const measurement = loadState('measurements');
+const goals = loadState('goals');
 
 const initialState = {
   user,
   measurements: measurement,
+  goals,
 };
 
 const store = configureStore(initialState);

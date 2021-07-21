@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createMeasurement } from '../redux/actions';
 
@@ -10,6 +10,7 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
   const [value, setValue] = useState(0);
   const [measurementId, setMeasurementId] = useState(1);
   const len = measurements.length;
+  const state = useSelector((state) => state);
 
   function measurement() {
     const token = localStorage.getItem('token');
@@ -34,6 +35,12 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (state.goals.items.length < 1 || !state.goals.items.includes(
+      (goal) => goal.measurement_id === measurementId,
+    )
+    ) {
+      history.push(`/${user.id}/setGoal`);
+    }
     measurement();
     setValue(0.00);
     history.push(`/${user.id}/track/${measurementId}`);

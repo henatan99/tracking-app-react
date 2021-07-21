@@ -1,5 +1,6 @@
-const date = '2021-07-13T21:39:04.322Z';
-const date1 = '2021-07-15T21:39:04.322Z';
-dateNew = new Date(date);
-dateNew1 = new Date(date1);
-console.log((dateNew1 - dateNew) / (24 * 60 * 60 * 1000));
+const a = [{ user_id: 1, measurement_id: 3 }, { user_id: 1, measurement_id: 2 },
+  { user_id: 1, measurement_id: 3 }, { user_id: 1, measurement_id: 3 }];
+
+const apluck = _.pluck(a, 'measuremnt_id');
+
+console.log(apluck);

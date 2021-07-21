@@ -22,14 +22,16 @@ const Measureds = () => {
 
     console.log(state.filteredMeasureds.items);
 
-    if (state.filteredMeasureds.items.length > 0) {
-      const n = state.filteredMeasureds.items.length;
-      return state.filteredMeasureds.items[mid - 1].map((measured, index) => (
+    if (state.filteredMeasureds.filtered_measureds.length > 0) {
+      const n = state.filteredMeasureds.filtered_measureds.length;
+      return state.filteredMeasureds.filtered_measureds[mid - 1].map((measured, index) => (
         <Measured
           name={state.measurements[measured.measurement_id - 1].name}
           date={measured.created_at}
           measured={measured.value}
-          diff={index > 1 ? measured.value - state.filteredMeasureds.items[n - 1].value : 0}
+          diff={
+            index > 1 ? measured.value - state.filteredMeasureds.filtered_measureds[n - 1].value : 0
+          }
           progressVal={70}
           user={state.user}
           unit={state.measurements[measured.measurement_id - 1].unit}

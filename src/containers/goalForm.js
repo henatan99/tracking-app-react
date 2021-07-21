@@ -12,6 +12,7 @@ const GoalForm = ({ createGoal, user, measurements }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   function settingGoal() {
+    const token = localStorage.getItem('token');
     setIsLoading(true);
     axios({
       method: 'POST',
@@ -21,6 +22,9 @@ const GoalForm = ({ createGoal, user, measurements }) => {
         day_one: dayOne,
         day_last: dayLast,
         measurement_id: measurementId,
+      },
+      headers: {
+        Authorization: `Bearer ${token}`,
       },
     })
       .then((response) => {

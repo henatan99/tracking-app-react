@@ -6,7 +6,8 @@ import {
 
 const initialState = {
   loading: false,
-  items: [],
+  filtered_measureds: [],
+  goals: [],
   error: '',
 };
 
@@ -22,13 +23,15 @@ export default function (state = initialState, action) {
       return {
         ...state,
         loading: false,
-        items: action.payload,
+        filtered_measureds: action.payload.measureds_by_measurement,
+        goals: action.payload.goals,
         error: '',
       };
     case FETCH_FILTERED_MEASUREDS_FAILURE:
       return {
         ...state,
-        items: [],
+        filtered_measureds: [],
+        goals: [],
         error: action.payload,
       };
     default:
