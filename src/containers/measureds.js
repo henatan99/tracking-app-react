@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchfilterByMeasurementIdMeasureds, fetchGoals } from '../redux/actions';
+import { fetchfilterByMeasurementIdMeasureds } from '../redux/actions';
 import Measured from '../components/measured';
 import MeasuredsSelector from '../components/measuerdsSelector';
-// import formattedDate from '../helpers/dateFormat';
 
 const Measureds = () => {
   const dispatch = useDispatch();
@@ -13,7 +12,7 @@ const Measureds = () => {
 
   useEffect(() => {
     dispatch(fetchfilterByMeasurementIdMeasureds(state.user.id));
-    dispatch(fetchGoals(state.user.id));
+    // dispatch(fetchGoals(state.user.id));
   }, []);
 
   const renderMeasureds = () => {
@@ -28,7 +27,6 @@ const Measureds = () => {
       return state.filteredMeasureds.items[mid - 1].map((measured, index) => (
         <Measured
           name={state.measurements[measured.measurement_id - 1].name}
-          // date={formattedDate(measured.created_at)}
           date={measured.created_at}
           measured={measured.value}
           diff={index > 1 ? measured.value - state.filteredMeasureds.items[n - 1].value : 0}
@@ -43,8 +41,8 @@ const Measureds = () => {
     return <h3>No list</h3>;
   };
   return (
-    <div>
-      <div>{ renderMeasureds() }</div>
+    <div className="measureds-wrapper">
+      <div className="measureds-list">{ renderMeasureds() }</div>
       <MeasuredsSelector user={state.user} measurements={state.measurements} />
     </div>
   );

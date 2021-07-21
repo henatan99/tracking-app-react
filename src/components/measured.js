@@ -8,8 +8,8 @@ import formattedDate from '../helpers/dateFormat';
 const Measured = ({
   name, measured, date, diff, progressVal, user, unit,
 }) => (
-  <Link to={`/${user.id}/measureds_by_date/${date}`} className="measured">
-    <div style={{ width: 50, height: 50 }}>
+  <Link to={`/${user.id}/measureds_by_date/${date}`} className="measured-wrapper">
+    <div style={{ width: 50, height: 50 }} className="measured-progress">
       <CircularProgressbar value={progressVal} text={`${progressVal}%`} />
     </div>
     <div className="measured-left">

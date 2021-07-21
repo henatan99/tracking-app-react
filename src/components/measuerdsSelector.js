@@ -28,7 +28,7 @@ const MeasuredsSelector = ({ measurements }) => {
   };
 
   return (
-    <div>
+    <div className="measureds-selector">
       <button type="button" onClick={handleBackward}>{'<'}</button>
       <button type="button" onClick={handleForward}>{'>'}</button>
     </div>
