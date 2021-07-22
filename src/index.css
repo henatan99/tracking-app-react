@@ -300,6 +300,7 @@ code {
   color: #bbc2ca;
   overflow: scroll;
   height: 70vh;
+  font-size: 18px;
 }
 
 .progress-val {
@@ -346,6 +347,7 @@ code {
 
 .progress-to-goal {
   padding: 0.5rem;
+  display: block;
 }
 
 .baseline-goal-div {
@@ -372,4 +374,66 @@ code {
 .score {
   width: 48%;
   background-color: #fdfdfd;
+}
+
+/* more */
+
+.more {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f3f4f6;
+}
+
+.user-profile {
+  background-color: #fdfdfd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  padding: 1rem;
+}
+
+.user-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.username {
+  margin-left: 1rem;
+  color: #687b8f;
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.more-ul {
+  background-color: #eeeff1;
+  list-style: none;
+  display: flex;flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+.more-li {
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+}
+
+.more-link {
+  text-decoration: none;
+  width: 90%;
+  padding: 0 5% 0 5%;
+  border-bottom: 2px solid #ebebec;
+  color: #76808a;
+}
+
+.more-li-title {
+  margin-left: 1rem;
 }
