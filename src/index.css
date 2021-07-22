@@ -287,6 +287,7 @@ code {
   display: flex;
   flex-direction: row;
   align-items: baseline;
+  background-color: #f3f4f6;
 }
 
 /* Progress */
@@ -296,19 +297,79 @@ code {
   flex-direction: column;
   align-items: center;
   padding: 4%;
+  color: #bbc2ca;
+  overflow: scroll;
+  height: 70vh;
 }
 
 .progress-val {
   padding: 1rem;
 }
 
+.progress-val-div {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fdfdfd;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+
 .progress-togo-wrapper {
+  width: 90%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  background-color: #fdfdfd;
+  padding: 2% 0 2% 0;
 } 
 
 .progress-togo {
 
+}
+
+.progress-bar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  background-color: #ebeef1;
+}
+
+.progress-bar-wrapper {
+  width: 90%;
+  background-color: #fdfdfd;
+  margin-top: 4%;
+}
+
+.progress-to-goal {
+  padding: 0.5rem;
+}
+
+.baseline-goal-div {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.variable-data {
+  /* background-color: #fdfdfd; */
+  width: 90%;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.current {
+  width: 48%;
+  background-color: #fdfdfd;
+}
+
+.score {
+  width: 48%;
+  background-color: #fdfdfd;
 }

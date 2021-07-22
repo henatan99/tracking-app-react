@@ -7,9 +7,13 @@ const ProgressBar = ({ values }) => (
             values.map((value, index) => (
               <span
                 style={{
+                  width: '10px',
                   padding: '3px',
-                  height: `${Math.max(values) + 10}px`,
+                  // height: `${Math.max(values) + 10}px`,
+                  height: '100px',
                   backgroundColor: '#ebeff2',
+                  display: 'block',
+                  position: 'relative',
                 }}
                 key={value || index}
               >
@@ -19,6 +23,8 @@ const ProgressBar = ({ values }) => (
                     height: `${value}px`,
                     backgroundColor: '#abb6c0',
                     display: 'block',
+                    position: 'absolute',
+                    bottom: 0,
                   }}
                   key={value || index}
                 />
