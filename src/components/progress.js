@@ -31,7 +31,7 @@ const Progress = ({
     <div className="variable-data">
       <div className="current">
         <h3>{`Current ${measurementName}`}</h3>
-        <span>{current}</span>
+        <span><larger>{current}</larger></span>
       </div>
       <div className="score">
         <h3>Score</h3>

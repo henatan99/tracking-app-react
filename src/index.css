@@ -236,6 +236,7 @@ code {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  justify-content: space-between;
   padding: 4% 0 4% 4%;
   background-color: #f3f4f6;
 }
@@ -243,14 +244,19 @@ code {
 /* measured-by-date */
 
 .measured-by-date {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   width: 38%;
+  justify-content: space-between;
   margin: 0 4% 4% 0;
   padding: 1rem;
   background-color: #fdfdfd;
   color: #a5b0bb;
+}
+
+.measured-by-date-div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .measured-by-date-info {
@@ -396,8 +402,28 @@ code {
 
 .user-img {
   width: 50px;
-  height: 50px;
+  height: 40px;
   border-radius: 25px;
+  background-color: #687b8f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.user-img-head {
+  width: 20px;
+  height: 24px;
+  border-radius: 10px;
+  background-color:#eeeff1;
+}
+
+.user-img-body {
+  width: 40px;
+  height: 40px;
+  border-radius: 15px;
+  background-color: #eeeff1;
 }
 
 .username {

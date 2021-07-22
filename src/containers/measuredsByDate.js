@@ -28,7 +28,7 @@ const MeasuredsByDate = () => {
         unit={state.measurements[measured.measurement_id].unit}
         progressVal={70}
         icon={state.measurements[measured.measurement_id].icon}
-        key={measured.id || index}
+        key={measured.measurement_id || index}
       />
     ));
   };

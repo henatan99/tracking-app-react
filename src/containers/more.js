@@ -14,7 +14,10 @@ const More = ({ user }) => {
   return (
     <div className="more">
       <div className="user-profile">
-        <img className="user-img" src="" alt="" />
+        <span className="user-img">
+          <span className="user-img-head" />
+          <span className="user-img-body" />
+        </span>
         <h1 className="username">{user.username}</h1>
       </div>
       <ul className="more-ul">
