@@ -7,12 +7,14 @@ const MeasuredByDate = ({
   name, measured, icon, unit,
 }) => (
   <div className="measured-by-date">
-    <img src={icon} alt={name} className="measured-by-date-img" />
+    <div>
+      <img src={icon} alt={name} className="measured-by-date-img-div" />
+    </div>
     <div className="measured-by-date-info">
-      <span>{name}</span>
-      <span>
-        {measured}
-        {unit}
+      <span className="measured-by-date-name">{name}</span>
+      <span className="measured-by-date-measured">
+        <big><b>{measured}</b></big>
+        <small>{unit}</small>
       </span>
     </div>
   </div>

@@ -2,9 +2,9 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { connect, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-// import { useParams } from 'react-router-dom';
 import MeasuredsByDate from '../containers/measuredsByDate';
 import FooterNav from '../components/footerNav';
+import formattedDate from '../helpers/dateFormat';
 
 const MeasuredsByDatePage = () => {
   const state = useSelector((state) => state);
@@ -15,7 +15,7 @@ const MeasuredsByDatePage = () => {
       <header className="measurement-page-header">
         <h3>Track.It</h3>
       </header>
-      <h1>{ date }</h1>
+      <h1 className="measureds-by-date-date">{ formattedDate(date) }</h1>
       <MeasuredsByDate />
       <FooterNav user={state.user} />
     </div>

@@ -225,15 +225,51 @@ code {
   align-items: center;
 }
 
-/* measured-by-date */
-.measureds-by-date {
-  display: grid;
-  
+/* measureds by date */
+
+.measureds-by-date-date {
+  color: #7f8fa0;
+  font-size: 20px;
 }
+
+.measureds-by-date {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 4% 0 4% 4%;
+  background-color: #f3f4f6;
+}
+
+/* measured-by-date */
 
 .measured-by-date {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  width: 38%;
+  margin: 0 4% 4% 0;
+  padding: 1rem;
+  background-color: #fdfdfd;
+  color: #a5b0bb;
+}
+
+.measured-by-date-info {
+
+}
+
+.measured-by-date-name {
+
+}
+
+.measured-by-date-measured {
+  
+}
+
+.measured-by-date-img-div {
+  width: 40px;
+  height: 40px;
+  color: #9ed8f2;
+  font: bolder;
 }
 
 .measured-by-date-img {
@@ -251,4 +287,28 @@ code {
   display: flex;
   flex-direction: row;
   align-items: baseline;
+}
+
+/* Progress */
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4%;
+}
+
+.progress-val {
+  padding: 1rem;
+}
+
+.progress-togo-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+} 
+
+.progress-togo {
+
 }

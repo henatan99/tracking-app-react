@@ -28,6 +28,7 @@ const ProgressPage = () => {
         measurementName="BP"
         current={22}
         score={60}
+        measurementUnit="CM"
       />
       <FooterNav user={state.user} />
     </div>
