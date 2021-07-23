@@ -31,7 +31,7 @@ const ProgressPage = () => {
         score={60}
         measurementUnit="CM"
       />
-      <MeasuredsSelector measurements={state.measurements} />
+      <MeasuredsSelector measurements={state.measurements} classVar="progress-measureds-selector" />
       <FooterNav user={state.user} />
     </div>
   );

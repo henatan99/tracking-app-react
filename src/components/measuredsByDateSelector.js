@@ -29,8 +29,12 @@ const MeasuredsByDateSelector = ({ dates }) => {
 
   return (
     <div className="measureds-date-selector">
-      <button type="button" onClick={handleBackward}>{'<'}</button>
-      <button type="button" onClick={handleForward}>{'>'}</button>
+      <button type="button" onClick={handleBackward} className="dir-btn">
+        <span className="iconify" data-icon="bx:bxs-left-arrow" data-inline="false" />
+      </button>
+      <button type="button" onClick={handleForward} className="dir-btn">
+        <span className="iconify" data-icon="bx:bxs-right-arrow" data-inline="false" />
+      </button>
     </div>
   );
 };

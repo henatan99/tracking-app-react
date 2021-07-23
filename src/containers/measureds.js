@@ -58,7 +58,11 @@ const Measureds = () => {
   return (
     <div className="measureds-wrapper">
       <div className="measureds-list">{ renderMeasureds() }</div>
-      <MeasuredsSelector user={state.user} measurements={state.measurements} />
+      <MeasuredsSelector
+        user={state.user}
+        measurements={state.measurements}
+        classVar="measureds-selector"
+      />
     </div>
   );
 };

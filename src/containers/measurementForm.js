@@ -9,6 +9,7 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
   const history = useHistory();
   const [value, setValue] = useState(0);
   const [measurementId, setMeasurementId] = useState(1);
+  const [nums, setNums] = useState([1, 2]);
   const len = measurements.length;
   const state = useSelector((state) => state);
 
@@ -53,6 +54,7 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
     } else {
       setMeasurementId(1);
     }
+    setNums([1, 2]);
   };
 
   const handleBackward = (e) => {
@@ -62,6 +64,7 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
     } else {
       setMeasurementId(len - 1);
     }
+    setNums([2, 1]);
   };
 
   return (
@@ -83,8 +86,8 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
           </button>
         </form>
         <div className="measurement-selector">
-          <button className="measurement-selector-btn" type="button" onClick={handleBackward}>Previous</button>
-          <button className="measurement-selector-btn" type="button" onClick={handleForward}>Next</button>
+          <button className={`measurement-selector-btn${nums[0]}`} type="button" onClick={handleBackward}>Previous</button>
+          <button className={`measurement-selector-btn${nums[1]}`} type="button" onClick={handleForward}>Next</button>
         </div>
       </div>
       <p>{measurementId}</p>
