@@ -73,13 +73,13 @@ const GoalForm = ({ createGoal, user, measurements }) => {
           <input
             type="date"
             onChange={(e) => setDayOne(formatDate(e.target.value))}
-            className="goal-form-input"
+            className="goal-form-date-input"
             placeholder="Day One"
           />
           <input
             type="date"
             onChange={(e) => setDayLast(formatDate(e.target.value))}
-            className="goal-form-input"
+            className="goal-form-date-input"
             placeholder="Day Last"
           />
         </div>

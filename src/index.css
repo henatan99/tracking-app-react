@@ -512,10 +512,14 @@ code {
   color: #76808a;
 }
 
-.goal-form-select, .goal-form-input {
+.goal-form-select, .goal-form-input, .goal-form-date-input {
   height: 2rem;
-  width: 30%;
+  width: 60%;
   border-color: #ebebec;
+}
+
+.goal-form-date-input {
+  width: 40%;
 }
 
 .goal-form-btn {
