@@ -4,11 +4,14 @@ import { useParams } from 'react-router-dom';
 import { fetchMeasureds } from '../redux/actions';
 import { FilterByDate } from '../helpers/filters';
 import MeasuredByDate from '../components/measuredByDate';
+import MeasuredsByDateSelector from '../components/measuredsByDateSelector';
+import dateList from '../helpers/getDateList';
 
 const MeasuredsByDate = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
   const { date } = useParams();
+  const dates = dateList(state.measureds.measureds);
 
   useEffect(() => {
     dispatch(fetchMeasureds(state.user.id));
@@ -33,7 +36,10 @@ const MeasuredsByDate = () => {
     ));
   };
   return (
-    <div className="measureds-by-date">{ renderFilteredMeasureds() }</div>
+    <div>
+      <MeasuredsByDateSelector dates={dates} />
+      <div className="measureds-by-date">{ renderFilteredMeasureds() }</div>
+    </div>
   );
 };
 

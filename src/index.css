@@ -150,6 +150,7 @@ code {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .measurement-input {
@@ -159,6 +160,7 @@ code {
   margin-top: 4rem;
   margin-bottom: 1rem;
   text-align: center;
+  border: 0;
 }
 
 .measurement-button {
@@ -471,7 +473,12 @@ code {
 }
 
 .goal-title {
-
+  color: #76808a;
+  font-size: 20px;
+  background-color: #fdfdfd;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding: 1rem;
 }
 
 .goal-form {
@@ -489,14 +496,18 @@ code {
   justify-content: space-between;
   align-items: center;
   padding: 2%;
+  border-bottom: 2px solid #ebebec;
+  color: #76808a;
 }
 
 .goal-form-select, .goal-form-input {
   height: 2rem;
-  width: 50%;
+  width: 30%;
+  border-color: #ebebec;
 }
 
 .goal-form-btn {
   width: 100%;
   height: 3rem;
+  margin-top: 3rem;
 }

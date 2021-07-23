@@ -1,6 +1,6 @@
 import React from 'react';
-import Enzyme from 'enzyme';
-import { shallow, mount } from 'enzyme';
+import Enzyme, { shallow, mount } from 'enzyme';
+
 import { create } from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
 import Adapter from 'enzyme-adapter-react-16';
@@ -28,4 +28,3 @@ describe('Measured', () => {
   //   expect(wrapper.find('div').length).toBe(12);
   // });
 });
-    

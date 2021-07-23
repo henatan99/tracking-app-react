@@ -72,7 +72,12 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
       </header>
       <div className="measurement-form-wrapper">
         <form onSubmit={handleSubmit} className="measurement-form">
-          <input type="text" onChange={(e) => setValue(e.target.value)} className="measurement-input" />
+          <input
+            type="text"
+            onChange={(e) => setValue(e.target.value)}
+            className="measurement-input"
+            placeholder="0.00"
+          />
           <button type="submit" className="measurement-button">
             <span className="iconify" data-icon="bx:bxs-badge-check" data-inline="false" />
           </button>

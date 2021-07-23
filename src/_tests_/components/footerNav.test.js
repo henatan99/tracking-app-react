@@ -1,12 +1,11 @@
 import React from 'react';
 import { create } from 'react-test-renderer';
-import Enzyme from 'enzyme';
-import { shallow, mount } from 'enzyme';
+import Enzyme, { shallow, mount } from 'enzyme';
+
 import { MemoryRouter } from 'react-router-dom';
 import Adapter from 'enzyme-adapter-react-16';
 
 import FooterNav from '../../components/footerNav';
-
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -30,4 +29,3 @@ describe('FooterNav', () => {
 //     expect(wrapper.find('li').length).toBe(4);
 //   });
 });
-    
