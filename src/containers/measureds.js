@@ -5,6 +5,7 @@ import { fetchfilterByMeasurementIdMeasureds } from '../redux/actions';
 import Measured from '../components/measured';
 import MeasuredsSelector from '../components/measuerdsSelector';
 import progress from '../helpers/calculate';
+import formattedDate from '../helpers/dateFormat';
 
 const Measureds = () => {
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ const Measureds = () => {
         <Measured
           name={state.measurements[measured.measurement_id - 1].name}
           date={measured.created_at}
+          fDate={formattedDate(measured.created_at)}
           measured={measured.value}
           diff={
             index > 1 ? measured.value - state.filteredMeasureds.filtered_measureds[
@@ -44,7 +46,7 @@ const Measureds = () => {
             measured.value,
             state.filteredMeasureds.filtered_measureds[0],
           )}
-          user={state.user}
+          userId={state.user.id}
           unit={state.measurements[measured.measurement_id - 1].unit}
           key={measured.id || index}
         />
