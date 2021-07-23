@@ -42,7 +42,7 @@ function App() {
           <Route path="/login" exact component={LoginPage} />
           <Route path="/:id/measurement" exact component={MeasurementPage} />
           <Route path="/:id/track/:mid" exact component={TrackPage} />
-          <Route path="/:id/progress" exact component={ProgressPage} />
+          <Route path="/:id/progress/:mid" exact component={ProgressPage} />
           <Route path="/:id/more" exact component={MorePage} />
           <Route path="/:id/measureds_by_date/:date" exact component={MeasuredsByDate} />
           <Route path="/:id/setgoal" exact component={GoalFormPage} />

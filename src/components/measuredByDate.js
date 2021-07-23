@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 import 'react-circular-progressbar/dist/styles.css';
 
 const MeasuredByDate = ({
-  name, measured, icon, unit, measurementId,
+  name, measured, icon, unit, userId, measurementId,
 }) => (
-  <Link to={`/${measurementId}/progress`} className="measured-by-date">
+  <Link to={`/${userId}/progress/${measurementId}`} className="measured-by-date">
     <div className="measured-by-date-div">
       <div>
         <img src={icon} alt={name} className="measured-by-date-img-div" />
@@ -30,6 +30,7 @@ MeasuredByDate.defaultProps = {
   //   progressVal: null,
   icon: null,
   measurementId: null,
+  userId: null,
 };
 
 MeasuredByDate.propTypes = {
@@ -39,6 +40,7 @@ MeasuredByDate.propTypes = {
   icon: PropTypes.string,
   //   progressVal: PropTypes.number,
   measurementId: PropTypes.number,
+  userId: PropTypes.number,
 };
 
 export default MeasuredByDate;
