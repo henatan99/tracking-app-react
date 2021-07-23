@@ -3,6 +3,7 @@ import { connect, useDispatch, useSelector } from 'react-redux';
 import FooterNav from '../components/footerNav';
 import Progress from '../components/progress';
 import { fetchfilterByMeasurementIdMeasureds, fetchGoals } from '../redux/actions';
+import MeasuredsSelector from '../components/measuerdsSelector';
 
 const ProgressPage = () => {
   const state = useSelector((state) => state);
@@ -30,6 +31,7 @@ const ProgressPage = () => {
         score={60}
         measurementUnit="CM"
       />
+      <MeasuredsSelector measurements={state.measurements} />
       <FooterNav user={state.user} />
     </div>
   );
