@@ -51,20 +51,41 @@ const GoalForm = ({ createGoal, user, measurements }) => {
   };
 
   return (
-    <div>
-      <h1>Set Your Goals</h1>
-      <form onSubmit={handleSubmit}>
-        <select onChange={(e) => setMeasurementId(e.target.value)}>
-          {measurements.map((measurement, index) => (
-            <option value={measurement.id} key={measurement.id || index}>
-              {measurement.name}
-            </option>
-          ))}
-        </select>
-        <input type="text" onChange={(e) => setQuantity(e.target.value)} />
-        <input type="date" onChange={(e) => setDayOne(formatDate(e.target.value))} />
-        <input type="date" onChange={(e) => setDayLast(formatDate(e.target.value))} />
-        <button type="submit">{!isLoading ? 'Submit' : 'Loading...'}</button>
+    <div className="goal">
+      <h1 className="goal-title">Set Your Goals</h1>
+      <form onSubmit={handleSubmit} className="goal-form">
+        <div className="goal-form-inner-div">
+          <h3 className="goal-form-label">Measurement</h3>
+          <select onChange={(e) => setMeasurementId(e.target.value)} className="goal-form-select">
+            {measurements.map((measurement, index) => (
+              <option value={measurement.id} key={measurement.id || index} className="goal-form-option">
+                {measurement.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="goal-form-inner-div">
+          <h3 className="goal-form-input-title">Value</h3>
+          <input type="text" onChange={(e) => setQuantity(e.target.value)} className="goal-form-input" />
+        </div>
+        <div className="goal-form-inner-div">
+          <h3 className="goal-form-input-title">Dates</h3>
+          <input
+            type="date"
+            onChange={(e) => setDayOne(formatDate(e.target.value))}
+            className="goal-form-input"
+            placeholder="Day One"
+          />
+          <input
+            type="date"
+            onChange={(e) => setDayLast(formatDate(e.target.value))}
+            className="goal-form-input"
+            placeholder="Day Last"
+          />
+        </div>
+        <div className="goal-form-inner-div">
+          <button type="submit" className="goal-form-btn">{!isLoading ? 'Submit' : 'Loading...'}</button>
+        </div>
       </form>
     </div>
   );

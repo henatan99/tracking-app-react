@@ -250,6 +250,7 @@ code {
   padding: 1rem;
   background-color: #fdfdfd;
   color: #a5b0bb;
+  text-decoration: none;
 }
 
 .measured-by-date-div {
@@ -303,7 +304,7 @@ code {
   flex-direction: column;
   align-items: center;
   padding: 4%;
-  color: #bbc2ca;
+  color: #a7abaf;
   overflow: scroll;
   height: 70vh;
   font-size: 18px;
@@ -462,4 +463,40 @@ code {
 
 .more-li-title {
   margin-left: 1rem;
+}
+
+/* goal */
+.goal {
+
+}
+
+.goal-title {
+
+}
+
+.goal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #eeeff1;
+  margin: 4%;
+}
+
+.goal-form-inner-div {
+  width: 96%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+}
+
+.goal-form-select, .goal-form-input {
+  height: 2rem;
+  width: 50%;
+}
+
+.goal-form-btn {
+  width: 100%;
+  height: 3rem;
 }
