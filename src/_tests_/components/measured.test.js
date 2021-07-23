@@ -9,12 +9,6 @@ import Measured from '../../components/measured';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-
-// it('renders when no props passed', () => {
-//   const tree = create(<Measured />).toJSON;
-//   expect(tree).toMatchSnapshot();
-// });
-
 let wrapper;
 
 beforeEach(() => {

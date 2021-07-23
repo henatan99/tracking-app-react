@@ -5,7 +5,7 @@ import { shallow, mount } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
 import Adapter from 'enzyme-adapter-react-16';
 
-import FooterNav from '../../components/footerNav';
+import MeasuredByDate from '../../components/measuredByDate';
 
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -13,7 +13,7 @@ Enzyme.configure({ adapter: new Adapter() });
 let wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<FooterNav />);
+  wrapper = shallow(<MeasuredByDate />);
 });
 
 describe('FooterNav', () => {
