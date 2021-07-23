@@ -28,7 +28,7 @@ const MeasuredsByDateSelector = ({ dates }) => {
   };
 
   return (
-    <div className="measureds-selector">
+    <div className="measureds-date-selector">
       <button type="button" onClick={handleBackward}>{'<'}</button>
       <button type="button" onClick={handleForward}>{'>'}</button>
     </div>
