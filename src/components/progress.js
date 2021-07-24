@@ -11,7 +11,7 @@ const Progress = ({
   <div className="progress">
     <div className="progress-val-div">
       <div style={{ width: 150, height: 150 }} className="progress-val">
-        <CircularProgressbar value={progressVal} text={`${progressVal}%`} />
+        <CircularProgressbar value={progressVal} text={`${progressVal}%`} styles="color: #95e393" />
       </div>
     </div>
     <div className="progress-togo-wrapper">
@@ -21,21 +21,35 @@ const Progress = ({
       <span>{`${measurementUnit} togo`}</span>
     </div>
     <div className="progress-bar-wrapper">
-      <span className="progress-to-goal">{`Day ${day} progress to goal`}</span>
+      <span className="progress-to-goal">
+        Day
+        {' '}
+        <big><b>{day}</b></big>
+        {' '}
+        progress to goal
+      </span>
       <ProgressBar values={measureds} />
       <div className="baseline-goal-div">
-        <span>{`Starting: ${baseline}`}</span>
-        <span>{`Goal: ${goalValue}`}</span>
+        <span>
+          {`Starting ${measurementName}:`}
+          {' '}
+          <b>{baseline}</b>
+        </span>
+        <span>
+          {`Goal ${measurementName}`}
+          {' '}
+          <b className="goal-value">{goalValue}</b>
+        </span>
       </div>
     </div>
     <div className="variable-data">
       <div className="current">
         <h3>{`Current ${measurementName}`}</h3>
-        <span><big>{current}</big></span>
+        <span className="progress-current">{current}</span>
       </div>
       <div className="score">
         <h3>Score</h3>
-        <span>{score}</span>
+        <span className="progress-score">{score}</span>
         <span />
       </div>
     </div>

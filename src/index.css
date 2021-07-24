@@ -385,6 +385,7 @@ code {
 
 .progress-val {
   padding: 1rem;
+  color: #95e393;
 }
 
 .progress-val-div {
@@ -446,14 +447,17 @@ code {
   justify-content: space-between;
 }
 
-.current {
+.current, .score {
   width: 48%;
   background-color: #fdfdfd;
+  font-size: 16px;
+  padding-bottom: 1rem;
 }
 
-.score {
-  width: 48%;
-  background-color: #fdfdfd;
+.progress-current, .progress-score {
+  font-size: 26px;
+  color: #8be187;
+  font-weight: 700;
 }
 
 .progress-measureds-selector {
@@ -463,6 +467,10 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.goal-value {
+  color: #4dbbe9;
 }
 
 /* more */
