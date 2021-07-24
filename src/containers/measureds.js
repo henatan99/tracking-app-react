@@ -11,6 +11,7 @@ const Measureds = () => {
   const dispatch = useDispatch();
   const { mid } = useParams();
   const state = useSelector((state) => state);
+  console.log(state.filteredMeasureds);
 
   useEffect(() => {
     dispatch(fetchfilterByMeasurementIdMeasureds(state.user.id));
@@ -24,8 +25,6 @@ const Measureds = () => {
         </div>
       );
     }
-
-    console.log(state.filteredMeasureds.items);
 
     if (state.filteredMeasureds.filtered_measureds.length > 0) {
       return state.filteredMeasureds.filtered_measureds[mid - 1].map((measured, index) => (
@@ -72,7 +71,7 @@ const Measureds = () => {
 };
 
 const mapStateToProps = (state) => ({
-  measureds: state.measureds,
+  filteredMeasureds: state.filteredMeasureds,
 });
 
 export default connect(mapStateToProps)(Measureds);
