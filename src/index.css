@@ -227,7 +227,7 @@ code {
 }
 
 .measureds-list {
-
+  width: 100%;
 }
 
 .measureds-selector {
@@ -258,7 +258,7 @@ code {
 
 .measureds-date-selector {
   position: absolute;
-  top: 14%;
+  top: 10%;
   padding: 0 5% 0 5%;
   width: 90%;
   display: flex;
@@ -266,10 +266,15 @@ code {
   justify-content: space-between;
 }
 
+.measureds-by-date-wrapper {
+  height: 70vh;
+  overflow: scroll;
+}
+
 .measureds-by-date {
   display: flex;
   flex-flow: row wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   padding: 4% 0 4% 4%;
   background-color: #f3f4f6;
@@ -512,7 +517,7 @@ code {
 
 /* goal */
 .goal {
-
+  overflow: scroll;
 }
 
 .goal-title {

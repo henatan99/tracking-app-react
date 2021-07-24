@@ -37,7 +37,7 @@ const MeasuredsByDate = () => {
     ));
   };
   return (
-    <div>
+    <div className="measureds-by-date-wrapper">
       <MeasuredsByDateSelector dates={dates} />
       <div className="measureds-by-date">{ renderFilteredMeasureds() }</div>
     </div>
