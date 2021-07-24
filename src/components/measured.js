@@ -8,33 +8,35 @@ const Measured = ({
   name, measured, date, fDate, diff, progressVal, userId, unit,
 }) => (
   <Link to={`/${userId}/measureds_by_date/${date}`} className="measured-wrapper">
-    <div style={{ width: 50, height: 50 }} className="measured-progress">
-      <CircularProgressbar value={progressVal} text={`${progressVal}%`} />
-    </div>
     <div className="measured-left">
-      <span className="measure-date">
-        {' '}
-        {fDate}
-        {' '}
-      </span>
-      <div className="name-measured-wrapper">
-        <span className="measure-name">
+      <div style={{ width: 40, height: 40 }} className="measured-progress">
+        <CircularProgressbar value={progressVal} />
+      </div>
+      <div className="measured-info">
+        <span className="measure-date">
           {' '}
-          {name}
+          {fDate}
           {' '}
         </span>
-        <span className="measured">
-          {' '}
-          {measured}
-          {' '}
-        </span>
+        <div className="name-measured-wrapper">
+          <span className="measure-name">
+            {' '}
+            {name}
+            {': '}
+          </span>
+          <span className="measured">
+            {' '}
+            {measured}
+            {' '}
+          </span>
+        </div>
       </div>
     </div>
     <span className="diff">
-      {diff >= 0 ? '+ ' : '- '}
-      {diff}
+      <big className="diff-val">{diff >= 0 ? '+ ' : '- '}</big>
+      <big className="diff-val">{diff}</big>
       {' '}
-      {unit}
+      <small>{unit}</small>
     </span>
   </Link>
 );

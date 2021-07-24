@@ -185,13 +185,17 @@ code {
   background-color: #fdfdfd;
   border: none;
   box-shadow: none;
+  color: #91969c;
+  font-weight: 700;
 }
 
 .measurement-selector-btn2 {
   width: 46%;
   height: 3rem;
-  background-color: #5bb5e5;
-  border: none
+  background-color: #97E494;
+  border: none;
+  color: #fdfdfd;
+  font-weight: 700;
 }
 
 /* Measured */
@@ -206,16 +210,44 @@ code {
   text-decoration: none;
 }
 
-.measured-date {
+.measured-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
+.measured-info {
+  margin-left: 1rem;
+}
+
+.measure-date {
+  color: #728397;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .name-measured-wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
+  color: #b9c1c9;
+  font-size: smaller;
+  font-weight: 700;
 }
 
+.measure-name {
+  margin-right: 0.3rem;
+}
+
+.diff {
+  color: #b9c1c9;
+  font-weight: 700;
+}
+
+.diff-val {
+  color: #556b82;
+  font-size: 20px;
+}
 /* measureds */
 
 .measureds-wrapper {
