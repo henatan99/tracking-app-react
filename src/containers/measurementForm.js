@@ -71,7 +71,7 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
     <div className="measurement">
       <header className="measurement-header">
         <h3>{`${user.username}, Measure your ${measurements[measurementId - 1].name}`}</h3>
-        <h3>{measurementId}</h3>
+        {/* <h3>{measurementId}</h3> */}
       </header>
       <div className="measurement-form-wrapper">
         <form onSubmit={handleSubmit} className="measurement-form">
