@@ -18,7 +18,11 @@ const Measureds = () => {
 
   const renderMeasureds = () => {
     if (state.filteredMeasureds.loading || state.goals.loading) {
-      return <h1>loading...</h1>;
+      return (
+        <div className="loader-div">
+          <span className="loader" />
+        </div>
+      );
     }
 
     console.log(state.filteredMeasureds.items);

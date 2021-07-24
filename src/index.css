@@ -281,6 +281,28 @@ code {
   opacity: 0.3;
 }
 
+.loader-div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loader {
+  border: 16px solid #c7c0c0; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 30vh;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 /* measureds by date */
 
 .measureds-by-date-date {

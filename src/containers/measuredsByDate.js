@@ -19,7 +19,9 @@ const MeasuredsByDate = () => {
 
   const renderFilteredMeasureds = () => {
     if (state.measureds.loading) {
-      return <h1>loading...</h1>;
+      <div className="loader-div">
+        <span className="loader" />
+      </div>;
     }
     console.log(state.measureds);
     const filterdByDate = FilterByDate(state.measureds.measureds, date);
