@@ -10,8 +10,14 @@ const Progress = ({
 }) => (
   <div className="progress">
     <div className="progress-val-div">
-      <div style={{ width: 150, height: 150 }} className="progress-val">
-        <CircularProgressbar value={score} text={`${progressVal} ${measurementName}`} styles="color: #95e393" />
+      <div
+        style={{
+          width: 150, height: 150, position: 'relative', textAlign: 'center',
+        }}
+        className="progress-val"
+      >
+        <CircularProgressbar value={score} text={`${progressVal}`} styles="color: #95e393" />
+        <span>{measurementName}</span>
       </div>
     </div>
     <div className="progress-togo-wrapper">
