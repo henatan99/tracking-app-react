@@ -6,17 +6,17 @@ import ProgressBar from './progressBar';
 
 const Progress = ({
   progressVal, togo, day, measureds, baseline, goalValue,
-  measurementName, current, score, measurementUnit, maxVal,
+  measurementName, current, score, measurementUnit,
 }) => (
   <div className="progress">
     <div className="progress-val-div">
       <div style={{ width: 150, height: 150 }} className="progress-val">
-        <CircularProgressbar value={(progressVal / maxVal) * 100} text={`${progressVal} ${measurementName}`} styles="color: #95e393" />
+        <CircularProgressbar value={score} text={`${progressVal} ${measurementName}`} styles="color: #95e393" />
       </div>
     </div>
     <div className="progress-togo-wrapper">
       <div style={{ width: 70, height: 70 }} className="progress-togo">
-        <CircularProgressbar value={togo} text={`${togo}%`} />
+        <CircularProgressbar value={togo} text={`${togo}`} />
       </div>
       <span>{`${measurementUnit} togo`}</span>
     </div>
@@ -67,7 +67,6 @@ Progress.defaultProps = {
   current: 0,
   score: 0,
   measurementUnit: '',
-  maxVal: null,
 };
 
 Progress.propTypes = {
@@ -81,7 +80,6 @@ Progress.propTypes = {
   current: PropTypes.number,
   score: PropTypes.number,
   measurementUnit: PropTypes.string,
-  maxVal: PropTypes.number,
 };
 
 export default Progress;

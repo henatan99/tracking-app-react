@@ -15,7 +15,7 @@ const ProgressBar = ({ values }) => (
                   display: 'block',
                   position: 'relative',
                 }}
-                key={value || index}
+                key={`bar${value}` || index}
               >
                 <span
                   style={{

@@ -11,19 +11,21 @@ const measuredVals = (measureds) => {
 const progProps = (myFilteredMeasureds, goals, mid) => {
   const filteredGoals = goals.length > 0 ? goals.map((goal) => goal.measurement_id === mid) : null;
   const goal = filteredGoals ? filteredGoals[filteredGoals.length - 1] : null;
-  const baseline = myFilteredMeasureds[0].value;
+  const baseline = myFilteredMeasureds ? myFilteredMeasureds[0].value : null;
   const current = myFilteredMeasureds[myFilteredMeasureds.length - 1].value;
+  const scoreScalar = (current - goal) / (baseline - goal);
+  const score = baseline > current ? scoreScalar : (1 / scoreScalar);
 
   return {
-    progressVal: goal ? (current - goal) / (baseline - goal) : (current - baseline) / baseline,
-    togo: current - goal,
-    day: myFilteredMeasureds[myFilteredMeasureds.length - 1].created_at,
+    progressVal: current - baseline,
+    togo: current && goal ? current - goal : null,
+    day: myFilteredMeasureds.length,
     measureds: measuredVals(myFilteredMeasureds),
     baseline,
-    goalValue: goal ? goal.quantity : 0,
+    goalValue: goal ? goal.quantity : null,
     measurementName: null,
     current,
-    score: goal ? (current - goal) / (baseline - goal) : (current - baseline) / baseline,
+    score: goal ? score : null,
     measurementUnit: null,
     maxValue: maxVal(myFilteredMeasureds),
   };

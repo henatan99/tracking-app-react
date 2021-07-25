@@ -386,6 +386,7 @@ code {
 
 /* Progress Bar */
 .progress-bar {
+  height: fit-content;
   display: flex;
   flex-direction: row;
   align-items: baseline;
