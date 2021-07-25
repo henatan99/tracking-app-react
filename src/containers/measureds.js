@@ -4,8 +4,8 @@ import { useParams } from 'react-router-dom';
 import { fetchfilterByMeasurementIdMeasureds } from '../redux/actions';
 import Measured from '../components/measured';
 import MeasuredsSelector from '../components/measuerdsSelector';
-import progress from '../helpers/calculate';
 import formattedDate from '../helpers/dateFormat';
+import progProps from '../helpers/progressData';
 
 const Measureds = () => {
   const dispatch = useDispatch();
@@ -27,27 +27,22 @@ const Measureds = () => {
     }
 
     if (state.filteredMeasureds.filtered_measureds.length > 0) {
-      return state.filteredMeasureds.filtered_measureds[mid - 1].map((measured, index) => (
+      const filterdByMeasurement = state.filteredMeasureds.filtered_measureds[mid - 1];
+      const { goals } = state.filteredMeasureds;
+      const myProps = progProps(filterdByMeasurement, goals, mid);
+
+      return filterdByMeasurement.map((measured, index) => (
         <Measured
           name={state.measurements[measured.measurement_id - 1].name}
           date={measured.created_at}
           fDate={formattedDate(measured.created_at)}
           measured={measured.value}
           diff={
-            index > 1 ? measured.value - state.filteredMeasureds.filtered_measureds[
-              state.filteredMeasureds.filtered_measureds.length - 1
-            ].value : 0
+            filterdByMeasurement.length > 1 && index > 0
+              ? measured.value - filterdByMeasurement[index - 1].value : 0
           }
-          progressVal={progress(
-            // state.filteredMeasureds.goals.find(
-            //   (goal) => goal.measurement_id === mid,
-            // ) ? state.filteredMeasureds.goals.find(
-            //   (goal) => goal.measurement_id === mid,
-            // ).quantity : 0,
-            16,
-            mid,
-            measured.value,
-            state.filteredMeasureds.filtered_measureds[0],
+          progressVal={(
+            measured.value - myProps.goal) / (measured.value - filterdByMeasurement[0].value
           )}
           userId={state.user.id}
           unit={state.measurements[measured.measurement_id - 1].unit}

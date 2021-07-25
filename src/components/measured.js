@@ -33,7 +33,7 @@ const Measured = ({
       </div>
     </div>
     <span className="diff">
-      <big className="diff-val">{diff >= 0 ? '+ ' : '- '}</big>
+      <big className="diff-val">{diff >= 0 ? '+ ' : ''}</big>
       <big className="diff-val">{diff}</big>
       {' '}
       <small>{unit}</small>

@@ -9,7 +9,7 @@ const ProgressBar = ({ values }) => (
                 style={{
                   width: '10px',
                   padding: '3px',
-                  // height: `${Math.max(values) + 10}px`,
+                  // height: `${Math.max(values) <= 100 ? 100 : Math.max(values) + 10}px`,
                   height: '100px',
                   backgroundColor: '#ebeff2',
                   display: 'block',
