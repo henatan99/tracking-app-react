@@ -10,6 +10,7 @@ const GoalForm = ({ createGoal, user, measurements }) => {
   const [dayLast, setDayLast] = useState();
   const [measurementId, setMeasurementId] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+  const [errors, setErrors] = useState(null);
 
   function settingGoal() {
     const token = localStorage.getItem('token');
@@ -33,6 +34,8 @@ const GoalForm = ({ createGoal, user, measurements }) => {
       })
       .catch((error) => {
         console.log(error);
+        setErrors(error);
+        setIsLoading(false);
       });
   }
 
@@ -43,6 +46,7 @@ const GoalForm = ({ createGoal, user, measurements }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(dayOne);
+    alert(measurementId);
     settingGoal();
     setQuantity(null);
     setDayOne(null);
@@ -86,6 +90,7 @@ const GoalForm = ({ createGoal, user, measurements }) => {
         <div className="goal-form-inner-div">
           <button type="submit" className="goal-form-btn">{!isLoading ? 'Submit' : 'Loading...'}</button>
         </div>
+        <h3>{errors ? 'Goal not created: It exists!' : null}</h3>
       </form>
     </div>
   );

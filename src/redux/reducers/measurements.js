@@ -1,6 +1,9 @@
 import { SET_MEASUREMENTS } from '../actions/types';
+import { loadState } from '../services/localStorage';
 
-export default function (state = [], action) {
+const initialState = loadState('measurements');
+
+export default function (state = initialState || [], action) {
   switch (action.type) {
     case SET_MEASUREMENTS:
       return action.payload;

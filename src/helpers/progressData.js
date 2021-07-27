@@ -20,7 +20,7 @@ const progProps = (myFilteredMeasureds, goals, mid) => {
     progressVal: current - baseline,
     togo: current && goal ? current - goal : null,
     day: myFilteredMeasureds.length,
-    measureds: measuredVals(myFilteredMeasureds),
+    measureds: [...measuredVals(myFilteredMeasureds)],
     baseline,
     goalValue: goal ? goal.quantity : null,
     measurementName: null,
@@ -32,3 +32,6 @@ const progProps = (myFilteredMeasureds, goals, mid) => {
 };
 
 export default progProps;
+
+// const measureds = [{value: 46}, {value: 70}, {value: 90}];
+// console.log(measuredVals(measureds));

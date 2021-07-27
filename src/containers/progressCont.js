@@ -28,16 +28,13 @@ const ProgressCont = () => {
       const myFilteredMeasureds = state.filteredMeasureds.filtered_measureds[mid - 1];
       const { goals } = state.filteredMeasureds;
       const myProps = progProps(myFilteredMeasureds, goals, mid);
-      console.log(myFilteredMeasureds);
-      let measureds = [];
-      measureds = [...myProps.measureds];
-      console.log(`values: ${measureds}`);
+
       return (
         <Progress
           progressVal={Math.round(myProps.progressVal)}
           togo={Math.round(myProps.togo)}
           day={Math.round(myProps.day)}
-          measureds={measureds}
+          measureds={myProps.measureds}
           baseline={Math.round(myProps.baseline)}
           goalValue={Math.round(myProps.goalValue)}
           measurementName={state.measurements[mid - 1].name}

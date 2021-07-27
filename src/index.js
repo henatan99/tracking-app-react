@@ -8,12 +8,12 @@ import configureStore from './redux/store/configStore';
 import { loadState } from './redux/services/localStorage';
 
 const user = loadState('user');
-const measurement = loadState('measurements');
+const measurements = loadState('measurements');
 const goals = loadState('goals');
 
 const initialState = {
   user,
-  measurements: measurement,
+  measurements,
   goals,
 };
 

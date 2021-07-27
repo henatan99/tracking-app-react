@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { connect, useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createMeasurement } from '../redux/actions';
 
@@ -10,8 +10,8 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
   const [value, setValue] = useState(0);
   const [measurementId, setMeasurementId] = useState(1);
   const [nums, setNums] = useState([1, 2]);
+  // const [data, setData] = useState({});
   const len = measurements.length;
-  const state = useSelector((state) => state);
 
   function measurement() {
     const token = localStorage.getItem('token');
@@ -27,7 +27,13 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
       },
     })
       .then((response) => {
-        createMeasurement(response.data);
+        if (response.data.failure) {
+          history.push(`/${user.id}/setGoal`);
+        } else {
+          createMeasurement(response.data);
+          // setData(response.data);
+        }
+        console.log(response);
       })
       .catch((error) => {
         console.log(error);
@@ -36,17 +42,12 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (state.goals.items.length < 1 || !state.goals.items.includes(
-      (goal) => goal.measurement_id === measurementId,
-    )
-    ) {
-      history.push(`/${user.id}/setGoal`);
-    }
     measurement();
     setValue(0.00);
     history.push(`/${user.id}/track/${measurementId}`);
   };
 
+  console.log(measurements);
   const handleForward = (e) => {
     e.preventDefault();
     if (measurementId < len - 1) {

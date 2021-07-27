@@ -16,6 +16,10 @@ import {
   FETCH_GOALS_REQUEST,
   FETCH_GOALS_SUCCESS,
   FETCH_GOALS_FAILURE,
+  LOGIN_USER_REQUEST,
+  LOGIN_USER_SUCCESS,
+  LOGIN_USER_FAILURE,
+  SET_VALUES,
 } from './types';
 
 export const signupUser = (user) => ({
@@ -45,6 +49,11 @@ export const createMeasurement = (measured) => ({
 export const createGoal = (goal) => ({
   type: CREATE_GOAL,
   payload: goal,
+});
+
+export const setValues = (values) => ({
+  type: SET_VALUES,
+  payload: values,
 });
 
 export const fetchGoals = (userId) => async (dispatch) => {
@@ -105,5 +114,28 @@ export const fetchfilterByMeasurementIdMeasureds = (userId) => async (dispatch) 
     dispatch({ type: FETCH_FILTERED_MEASUREDS_SUCCESS, payload: response.data });
   } catch (error) {
     dispatch({ type: FETCH_FILTERED_MEASUREDS_FAILURE }, error);
+  }
+};
+
+export const logingUser = (username) => async (dispatch) => {
+  dispatch({ type: LOGIN_USER_REQUEST });
+
+  try {
+    const response = axios({
+      method: 'POST',
+      url: 'https://pure-tundra-23506.herokuapp.com/login',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      data: {
+        username,
+      },
+    });
+
+    dispatch({ type: LOGIN_USER_SUCCESS, payload: response.data });
+    console.log(`From logingUser action response: ${response}`);
+  } catch (error) {
+    dispatch({ type: LOGIN_USER_FAILURE }, error);
   }
 };

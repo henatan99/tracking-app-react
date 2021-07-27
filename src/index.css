@@ -581,6 +581,7 @@ code {
 /* goal */
 .goal {
   overflow: scroll;
+  height: 70vh;
 }
 
 .goal-title {
