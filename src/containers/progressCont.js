@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { fetchfilterByMeasurementIdMeasureds } from '../redux/actions';
 import Progress from '../components/progress';
 import MeasuredsSelector from '../components/measuerdsSelector';
-import progProps from '../helpers/progressData';
+import { progProps } from '../helpers/progressData';
 
 const ProgressCont = () => {
   const dispatch = useDispatch();
@@ -63,6 +63,7 @@ const ProgressCont = () => {
 
 const mapStateToProps = (state) => ({
   filteredMeasureds: state.filteredMeasureds,
+  measurements: state.measurements,
 });
 
 export default connect(mapStateToProps)(ProgressCont);

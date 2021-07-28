@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { progProps } from '../../helpers/progressData';
 
 import {
   SIGNUP_USER,
@@ -20,6 +21,7 @@ import {
   LOGIN_USER_SUCCESS,
   LOGIN_USER_FAILURE,
   SET_VALUES,
+  SET_PROGRESS_PROPS,
 } from './types';
 
 export const signupUser = (user) => ({
@@ -54,6 +56,11 @@ export const createGoal = (goal) => ({
 export const setValues = (values) => ({
   type: SET_VALUES,
   payload: values,
+});
+
+export const setProgressProps = (filteredMeasureds, goals, mid) => ({
+  type: SET_PROGRESS_PROPS,
+  payload: progProps(filteredMeasureds, goals, mid),
 });
 
 export const fetchGoals = (userId) => async (dispatch) => {

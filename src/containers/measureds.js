@@ -5,7 +5,7 @@ import { fetchfilterByMeasurementIdMeasureds } from '../redux/actions';
 import Measured from '../components/measured';
 import MeasuredsSelector from '../components/measuerdsSelector';
 import formattedDate from '../helpers/dateFormat';
-import progProps from '../helpers/progressData';
+import { progProps } from '../helpers/progressData';
 
 const Measureds = () => {
   const dispatch = useDispatch();
