@@ -27,7 +27,11 @@ const ProgressCont = () => {
     if (state.filteredMeasureds.filtered_measureds.length > 0) {
       const myFilteredMeasureds = state.filteredMeasureds.filtered_measureds[mid - 1];
       const { goals } = state.filteredMeasureds;
+      console.log(goals);
       const myProps = progProps(myFilteredMeasureds, goals, mid);
+      const measuredIds = state.filteredMeasureds.goals.map((goal) => goal.measurement_id);
+      console.log(measuredIds.indexOf(mid));
+      console.log(goals[mid - 1]);
 
       return (
         <Progress

@@ -8,15 +8,22 @@ const measuredVals = (measureds) => {
   return result;
 };
 
-export const goalsQuans = (goals, mid) => goals.filter((goal) => goal.measurement_id === mid);
+export const goalsQuans = (goals, mid) => {
+  let myGoal;
+  goals.forEach((goal) => {
+    if (goal.measurement_id === mid) {
+      myGoal = goal;
+    }
+  });
+  return myGoal;
+};
 
-export const progProps = (myFilteredMeasureds, filteredGoals) => {
-  const goal = filteredGoals ? filteredGoals[filteredGoals.length - 1] : null;
-  console.log(`helper goal: ${goal}`);
+export const progProps = (myFilteredMeasureds, goals, mid) => {
+  const goal = goals.length > 0 ? goalsQuans(goals, parseInt(mid, 10)) : null;
   const baseline = myFilteredMeasureds ? myFilteredMeasureds[0].value : null;
   const current = myFilteredMeasureds[myFilteredMeasureds.length - 1].value;
-  const scoreScalar = goal ? (current - goal.quantity) / (baseline - goal.quantity) : null;
-  const score = baseline > current ? scoreScalar : (1 / scoreScalar);
+  const score = (current - baseline) / (goal.quantity - baseline) > 1
+    ? 1 : (current - baseline) / (goal.quantity - baseline);
 
   return {
     progressVal: current - baseline,
@@ -27,16 +34,16 @@ export const progProps = (myFilteredMeasureds, filteredGoals) => {
     goalValue: goal && goal.quantity ? goal.quantity : null,
     measurementName: null,
     current,
-    score: goal ? score : null,
+    score: score < 1 ? 0 : score,
     measurementUnit: null,
     maxValue: maxVal(myFilteredMeasureds),
   };
 };
 
-// export default progProps;
+export default progProps;
 
 // const measureds = [{ value: 46 }, { value: 70 }, { value: 90 }];
-// const goals = [{ quantity: 46 }, { quantity: 70 }, { quantity: 90 }];
-
+// const goals = [{ measurement_id: 46, name: 30 }, { quantity: 70, name: 40 }, { quantity: 90 }];
+// const mid = 46;
 // console.log(measuredVals(measureds));
-// console.log(goalsQuans(goals, 70));
+// console.log(goalsQuans(goals, mid));
