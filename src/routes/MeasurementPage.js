@@ -10,8 +10,6 @@ const MeasurementPage = () => {
     setMeasurements(localStorage.getItem('measurements'));
   });
 
-  console.log(`measuremnts: ${measurements} and user: ${state.user}`);
-
   if (measurements) {
     return (
       <div className="measurement-page">

@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
-import ProgressPage from '../../routes/ProgressPage';
+import MeasurementPage from '../../routes/MeasurementPage';
 import createTestStore from '../factories/storeFactory';
 
 describe('Measureds', () => {
@@ -15,11 +15,10 @@ describe('Measureds', () => {
         .create(
           <Provider store={store}>
             <MemoryRouter>
-              <ProgressPage />
+              <MeasurementPage />
             </MemoryRouter>
           </Provider>,
         ).toJSON();
       expect(tree).toMatchSnapshot();
     });
   });
-  
