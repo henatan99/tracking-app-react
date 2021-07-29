@@ -51,9 +51,3 @@ export const progProps = (myFilteredMeasureds, goals, mid) => {
 };
 
 export default progProps;
-
-// const measureds = [{ value: 46 }, { value: 70 }, { value: 90 }];
-// const goals = [{ measurement_id: 46, name: 30 }, { quantity: 70, name: 40 }, { quantity: 90 }];
-// const mid = 46;
-// console.log(measuredVals(measureds));
-// console.log(goalsQuans(goals, mid));

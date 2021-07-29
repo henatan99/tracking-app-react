@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-// import ProgressBar from './progressBar';
-// import { render } from "react-dom";
 import { Chart } from 'react-google-charts';
 
 const Progress = ({
@@ -36,15 +34,15 @@ const Progress = ({
         {' '}
         progress to goal
       </span>
-      <Chart
-        // chartType="ScatterChart"
-        // chartType="PieChart"
-        chartType="ColumnChart"
-        data={data}
-        width="90%"
-        height="100px"
-        legendToggle
-      />
+      { data.length > 1 ? (
+        <Chart
+          chartType="ColumnChart"
+          data={data}
+          width="90%"
+          height="100px"
+          legendToggle
+        />
+      ) : null}
       <div className="baseline-goal-div">
         <span>
           {`Starting ${measurementName}:`}
@@ -76,7 +74,6 @@ Progress.defaultProps = {
   progressVal: 0,
   togo: 0,
   day: 0,
-  // measureds: [],
   data: [],
   baseline: 0,
   goalValue: 0,
@@ -90,7 +87,6 @@ Progress.propTypes = {
   progressVal: PropTypes.number,
   togo: PropTypes.number,
   day: PropTypes.number,
-  // measureds: PropTypes.instanceOf(Array),
   data: PropTypes.instanceOf(Array),
   baseline: PropTypes.number,
   goalValue: PropTypes.number,

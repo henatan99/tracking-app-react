@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-// import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 const MeasuredByDate = ({
@@ -27,7 +26,6 @@ MeasuredByDate.defaultProps = {
   name: null,
   measured: null,
   unit: null,
-  //   progressVal: null,
   icon: null,
   measurementId: null,
   userId: null,
@@ -38,7 +36,6 @@ MeasuredByDate.propTypes = {
   measured: PropTypes.number,
   unit: PropTypes.string,
   icon: PropTypes.string,
-  //   progressVal: PropTypes.number,
   measurementId: PropTypes.number,
   userId: PropTypes.number,
 };
