@@ -7,13 +7,11 @@ import { loginUser, setMeasurements } from '../redux/actions';
 import { saveState } from '../redux/services/localStorage';
 
 const LoginForm = ({ loginUser, setMeasurements }) => {
-  // const [userResp, setUserResp] = useState({});
   const [loggingIn, setLoggingIn] = useState(false);
   const [username, setUsername] = useState('');
   const [errors, setErrors] = useState(null);
   const state = useSelector((state) => state);
   const history = useHistory();
-  // const dispatch = useDispatch();
 
   function login() {
     setLoggingIn(true);
@@ -30,7 +28,6 @@ const LoginForm = ({ loginUser, setMeasurements }) => {
       },
     }).then((response) => {
       setLoggingIn(false);
-      // setUserResp(response.data);
       loginUser(response.data.user);
       setMeasurements(response.data.measurements);
       saveState(response.data.user, 'user');
@@ -47,22 +44,6 @@ const LoginForm = ({ loginUser, setMeasurements }) => {
       console.log(errors);
     });
   }
-
-  // function login() {
-  //   dispatch(logingUser(username)).then((response) => {
-  //     console.log(`Promise response: ${response}`);
-  //   });
-  //   // console.log(loginData);
-  //   if (state.logingUser.user.username && state.logingUser.measurements.length) {
-  //     loginUser(state.logingUser.user);
-  //     setMeasurements(state.logingUser.measurements);
-  //     saveState(state.logingUser.user, 'user');
-  //     saveState(state.logingUser.measurements, 'measurements');
-  //     console.log(`Login response: ${state.logingUser.measurements}`);
-  //     localStorage.setItem('token', state.logingUser.token);
-  //     history.push(`${state.logingUser.user.id}/measurement`);
-  //   }
-  // }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -87,9 +68,6 @@ const LoginForm = ({ loginUser, setMeasurements }) => {
         <button type="submit" className="login-button">
           {!loggingIn ? 'Login' : 'Logging in...'}
         </button>
-        {/* <span>
-          {userResp.data && userResp.data.failure ? userResp.data.failure : ''}
-        </span> */}
         <span>{errors ? 'Username Invalid' : ''}</span>
       </form>
     </div>
