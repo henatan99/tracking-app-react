@@ -11,10 +11,12 @@ const GoalForm = ({ createGoal, user, measurements }) => {
   const [measurementId, setMeasurementId] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState(null);
+  const [status, setStatus] = useState(false);
 
   function settingGoal() {
     const token = localStorage.getItem('token');
     setIsLoading(true);
+    setStatus(false);
     axios({
       method: 'POST',
       url: `https://pure-tundra-23506.herokuapp.com/users/${user.id}/goals`,
@@ -31,11 +33,13 @@ const GoalForm = ({ createGoal, user, measurements }) => {
       .then((response) => {
         createGoal(response.data);
         setIsLoading(false);
+        setStatus(true);
       })
       .catch((error) => {
         console.log(error);
         setErrors(error);
         setIsLoading(false);
+        setStatus(false);
       });
   }
 
@@ -91,6 +95,7 @@ const GoalForm = ({ createGoal, user, measurements }) => {
           <button type="submit" className="goal-form-btn">{!isLoading ? 'Submit' : 'Loading...'}</button>
         </div>
         <h3>{errors ? 'Goal not created: It exists!' : null}</h3>
+        <h3>{status ? 'Goal successfuly created!' : null}</h3>
       </form>
     </div>
   );
