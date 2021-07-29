@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { logoutUser } from '../redux/actions';
 
-const More = ({ user }) => {
+const More = ({ username, userId }) => {
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
@@ -18,10 +18,10 @@ const More = ({ user }) => {
           <span className="user-img-head" />
           <span className="user-img-body" />
         </span>
-        <h1 className="username">{user.username}</h1>
+        <h1 className="username">{username}</h1>
       </div>
       <ul className="more-ul">
-        <Link to={`/${user.id}/setgoal`} className="more-link">
+        <Link to={`/${userId}/setgoal`} className="more-link">
           <li className="more-li">
             <span className="iconify" data-icon="flat-ui:goal" data-inline="false" />
             <h3 className="more-li-title">Your Goal</h3>
@@ -39,14 +39,18 @@ const More = ({ user }) => {
 };
 
 More.defaultProps = {
-  user: null,
+  // user: null,
+  username: '',
+  userId: null,
 };
 
 More.propTypes = {
-  user: PropTypes.shape({
-    id: PropTypes.number,
-    username: PropTypes.string,
-  }),
+  // user: PropTypes.shape({
+  //   id: PropTypes.number,
+  //   username: PropTypes.string,
+  // }),
+  username: PropTypes.string,
+  userId: PropTypes.number,
 };
 
 export default More;

@@ -11,14 +11,10 @@ const MorePage = () => {
       <header className="measurement-page-header">
         <h3>More</h3>
       </header>
-      <More user={state.user} />
+      <More username={state.user.username} userId={state.user.id} />
       <FooterNav user={state.user} />
     </div>
   );
-};
-
-MorePage.defaultProps = {
-  user: null,
 };
 
 const mapStateToProps = (state) => ({
