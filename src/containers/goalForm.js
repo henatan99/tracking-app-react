@@ -55,7 +55,6 @@ const GoalForm = ({ createGoal, user, measurements }) => {
     setQuantity(null);
     setDayOne(null);
     setDayLast(null);
-    // history.push(`/${user.id}/track/${measurementId}`);
   };
 
   return (

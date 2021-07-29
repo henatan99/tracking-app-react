@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchfilterByMeasurementIdMeasureds, setView } from '../redux/actions';
+import { fetchfilterByMeasurementIdMeasureds } from '../redux/actions';
 import Progress from '../components/progress';
 import MeasuredsSelector from '../components/measuerdsSelector';
 import { progProps } from '../helpers/progressData';
@@ -13,7 +13,6 @@ const ProgressCont = () => {
 
   useEffect(() => {
     dispatch(fetchfilterByMeasurementIdMeasureds(state.user.id));
-    dispatch(setView(true));
   }, []);
 
   const renderProgress = () => {
@@ -28,9 +27,7 @@ const ProgressCont = () => {
     if (state.filteredMeasureds.filtered_measureds.length > 0) {
       const myFilteredMeasureds = state.filteredMeasureds.filtered_measureds[mid - 1];
       const { goals } = state.filteredMeasureds;
-      console.log(goals);
       const myProps = progProps(myFilteredMeasureds, goals, mid);
-      console.log(myProps.getData);
 
       return (
         <Progress
@@ -66,7 +63,6 @@ const ProgressCont = () => {
 const mapStateToProps = (state) => ({
   filteredMeasureds: state.filteredMeasureds,
   measurements: state.measurements,
-  view: state.view,
 });
 
 export default connect(mapStateToProps)(ProgressCont);

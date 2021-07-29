@@ -32,7 +32,6 @@ const LoginForm = ({ loginUser, setMeasurements }) => {
       setMeasurements(response.data.measurements);
       saveState(response.data.user, 'user');
       saveState(response.data.measurements, 'measurements');
-      console.log(`Login response: ${response}`);
       localStorage.setItem('token', response.data.jwt);
       if (response.data.success && response.data.measurements) {
         console.log(`from login: ${state.measurements}`);

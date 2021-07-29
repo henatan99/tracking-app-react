@@ -25,7 +25,6 @@ const MeasuredsByDate = () => {
         </div>
       );
     }
-    console.log(state.measureds);
     const filterdByDate = FilterByDate(state.measureds.measureds, date);
 
     return filterdByDate.map((measured, index) => (

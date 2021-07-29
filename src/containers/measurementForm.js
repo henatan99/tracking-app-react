@@ -10,7 +10,6 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
   const [value, setValue] = useState(0);
   const [measurementId, setMeasurementId] = useState(1);
   const [nums, setNums] = useState([1, 2]);
-  // const [data, setData] = useState({});
   const len = measurements.length;
 
   function measurement() {
@@ -31,9 +30,7 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
           history.push(`/${user.id}/setGoal`);
         } else {
           createMeasurement(response.data);
-          // setData(response.data);
         }
-        console.log(response);
       })
       .catch((error) => {
         console.log(error);
@@ -72,7 +69,6 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
     <div className="measurement">
       <header className="measurement-header">
         <h3>{`${user.username}, Measure your ${measurements[measurementId - 1].name}`}</h3>
-        {/* <h3>{measurementId}</h3> */}
       </header>
       <div className="measurement-form-wrapper">
         <form onSubmit={handleSubmit} className="measurement-form">

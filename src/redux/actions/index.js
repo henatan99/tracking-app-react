@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { progProps } from '../../helpers/progressData';
+// import { progProps } from '../../helpers/progressData';
 
 import {
-  SIGNUP_USER,
+  // SIGNUP_USER,
   LOGIN_USER,
   LOGOUT_USER,
   SET_MEASUREMENTS,
@@ -17,18 +17,18 @@ import {
   FETCH_GOALS_REQUEST,
   FETCH_GOALS_SUCCESS,
   FETCH_GOALS_FAILURE,
-  LOGIN_USER_REQUEST,
-  LOGIN_USER_SUCCESS,
-  LOGIN_USER_FAILURE,
-  SET_VALUES,
-  SET_PROGRESS_PROPS,
-  SET_VIEW,
+  // LOGIN_USER_REQUEST,
+  // LOGIN_USER_SUCCESS,
+  // LOGIN_USER_FAILURE,
+  // SET_VALUES,
+  // SET_PROGRESS_PROPS,
+  // SET_VIEW,
 } from './types';
 
-export const signupUser = (user) => ({
-  type: SIGNUP_USER,
-  payload: user,
-});
+// export const signupUser = (user) => ({
+//   type: SIGNUP_USER,
+//   payload: user,
+// });
 
 export const loginUser = (user) => ({
   type: LOGIN_USER,
@@ -54,20 +54,20 @@ export const createGoal = (goal) => ({
   payload: goal,
 });
 
-export const setValues = (values) => ({
-  type: SET_VALUES,
-  payload: values,
-});
+// export const setValues = (values) => ({
+//   type: SET_VALUES,
+//   payload: values,
+// });
 
-export const setProgressProps = (filteredMeasureds, goals, mid) => ({
-  type: SET_PROGRESS_PROPS,
-  payload: progProps(filteredMeasureds, goals, mid),
-});
+// export const setProgressProps = (filteredMeasureds, goals, mid) => ({
+//   type: SET_PROGRESS_PROPS,
+//   payload: progProps(filteredMeasureds, goals, mid),
+// });
 
-export const setView = (view) => ({
-  type: SET_VIEW,
-  payload: view,
-});
+// export const setView = (view) => ({
+//   type: SET_VIEW,
+//   payload: view,
+// });
 
 export const fetchGoals = (userId) => async (dispatch) => {
   dispatch({ type: FETCH_GOALS_REQUEST });
@@ -130,25 +130,25 @@ export const fetchfilterByMeasurementIdMeasureds = (userId) => async (dispatch) 
   }
 };
 
-export const logingUser = (username) => async (dispatch) => {
-  dispatch({ type: LOGIN_USER_REQUEST });
+// export const logingUser = (username) => async (dispatch) => {
+//   dispatch({ type: LOGIN_USER_REQUEST });
 
-  try {
-    const response = axios({
-      method: 'POST',
-      url: 'https://pure-tundra-23506.herokuapp.com/login',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      data: {
-        username,
-      },
-    });
+//   try {
+//     const response = axios({
+//       method: 'POST',
+//       url: 'https://pure-tundra-23506.herokuapp.com/login',
+//       headers: {
+//         'Content-Type': 'application/json',
+//         Accept: 'application/json',
+//       },
+//       data: {
+//         username,
+//       },
+//     });
 
-    dispatch({ type: LOGIN_USER_SUCCESS, payload: response.data });
-    console.log(`From logingUser action response: ${response}`);
-  } catch (error) {
-    dispatch({ type: LOGIN_USER_FAILURE }, error);
-  }
-};
+//     dispatch({ type: LOGIN_USER_SUCCESS, payload: response.data });
+//     console.log(`From logingUser action response: ${response}`);
+//   } catch (error) {
+//     dispatch({ type: LOGIN_USER_FAILURE }, error);
+//   }
+// };

@@ -32,7 +32,7 @@ export const progProps = (myFilteredMeasureds, goals, mid) => {
     ? myFilteredMeasureds[0].value : null;
   const current = myFilteredMeasureds && myFilteredMeasureds.length > 0
     ? myFilteredMeasureds[myFilteredMeasureds.length - 1].value : null;
-  const score = goal && goal.length > 0 ? (current - baseline) / (goal.quantity - baseline) : null;
+  const score = goal ? (current - baseline) / (goal.quantity - baseline) : null;
 
   return {
     progressVal: current - baseline,
@@ -43,7 +43,7 @@ export const progProps = (myFilteredMeasureds, goals, mid) => {
     goalValue: goal && goal.quantity ? goal.quantity : null,
     measurementName: null,
     current,
-    score: score < 1 ? 0 : score,
+    score,
     measurementUnit: null,
     maxValue: maxVal(myFilteredMeasureds),
     getData: getData([...measuredVals(myFilteredMeasureds)]),

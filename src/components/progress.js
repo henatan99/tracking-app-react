@@ -22,7 +22,7 @@ const Progress = ({
     </div>
     <div className="progress-togo-wrapper">
       <div style={{ width: 70, height: 70 }} className="progress-togo">
-        <CircularProgressbar value={togo} text={`${togo}`} />
+        <CircularProgressbar value={100 - score} text={`${togo}`} />
       </div>
       <span>{`${measurementUnit} togo`}</span>
     </div>
