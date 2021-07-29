@@ -2,14 +2,18 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
+import Enzyme, { shallow, mount } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import LoginForm from '../../containers/loginForm';
 import { loginUser } from '../../redux/actions';
 
 const mockStore = configureStore([]);
 
+Enzyme.configure({ adapter: new Adapter() });
+
 describe('LoginForm', () => {
   let store;
-  let component;
+  let wrapper;
 
   beforeEach(() => {
     store = mockStore({
@@ -17,13 +21,20 @@ describe('LoginForm', () => {
     });
 
     store.dispatch = jest.fn();
-
+    wrapper = shallow(<LoginForm />);
     component = renderer.create(
       <Provider store={store}>
-        <LoginForm />
+        {wrapper}
       </Provider>,
     );
   });
+
+  it('does not reload page after submission', () => {
+    const event = { preventDefault: () => {} };
+    jest.spyOn(event, 'preventDefault');
+    wrapper.find('form').simulate('submit', event);
+    expect(event.preventDefault).toBeCalled();
+  })
 
   it('should render with given state from Redux store', () => {
     expect(component.toJSON()).toMatchSnapshot();

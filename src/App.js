@@ -31,8 +31,6 @@ function App() {
           saveState(data.measurements, 'measurements');
         });
     }
-    console.log(localStorage.getItem('user'));
-    console.log(localStorage.getItem('measurements'));
   });
 
   return (

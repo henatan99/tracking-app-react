@@ -9,7 +9,7 @@ const GoalFormPage = () => {
   return (
     <div className="measurement-page">
       <header className="measurement-page-header">
-        <h3>Set your goal</h3>
+        <h3>More</h3>
       </header>
       <GoalForm user={state.user} measurements={state.measurements} />
       <FooterNav user={state.user} />
