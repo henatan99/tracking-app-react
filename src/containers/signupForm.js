@@ -15,7 +15,7 @@ const SignupForm = ({ loginUser }) => {
   function signup() {
     setSigningUp(true);
 
-    const createUserRequest = axios({
+    axios({
       method: 'POST',
       url: 'https://pure-tundra-23506.herokuapp.com/users',
       headers: {
@@ -25,30 +25,22 @@ const SignupForm = ({ loginUser }) => {
       data: {
         username,
       },
+    }).then((response) => {
+      setSigningUp(false);
+      loginUser(response.data.user);
+      setMeasurements(response.data.measurements);
+      saveState(response.data.user, 'user');
+      saveState(response.data.measurements, 'measurements');
+      console.log(`Login response: ${response}`);
+      localStorage.setItem('token', response.data.jwt);
+      if (response.data.success && response.data.measurements) {
+        history.push(`${response.data.user.id}/measurement`);
+      }
+    }).catch((errors) => {
+      setSigningUp(false);
+      setErrors(errors);
+      console.log(errors);
     });
-
-    const featchMeasurementsRequest = axios({
-      method: 'GET',
-      url: 'https://pure-tundra-23506.herokuapp.com/measurements',
-    });
-
-    axios.all([createUserRequest, featchMeasurementsRequest])
-      .then(axios.spread((...responses) => {
-        setSigningUp(false);
-        loginUser(responses[0].data);
-        console.log(responses[0]);
-        setMeasurements(responses[1].data);
-        saveState(responses[0].data, 'user');
-        saveState(responses[1].data, 'measurements');
-        localStorage.setItem('token', responses[0].data.jwt);
-        if (responses[0].data.user) {
-          history.push(`${responses[0].data.user.id}/measurement`);
-        }
-      })).catch((errors) => {
-        setSigningUp(false);
-        setErrors(errors);
-        console.log(errors);
-      });
   }
 
   const handleSubmit = (e) => {
