@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { connect, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import MeasuredsByDate from '../containers/measuredsByDate';
