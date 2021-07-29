@@ -22,6 +22,7 @@ import {
   LOGIN_USER_FAILURE,
   SET_VALUES,
   SET_PROGRESS_PROPS,
+  SET_VIEW,
 } from './types';
 
 export const signupUser = (user) => ({
@@ -61,6 +62,11 @@ export const setValues = (values) => ({
 export const setProgressProps = (filteredMeasureds, goals, mid) => ({
   type: SET_PROGRESS_PROPS,
   payload: progProps(filteredMeasureds, goals, mid),
+});
+
+export const setView = (view) => ({
+  type: SET_VIEW,
+  payload: view,
 });
 
 export const fetchGoals = (userId) => async (dispatch) => {

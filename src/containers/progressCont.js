@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchfilterByMeasurementIdMeasureds } from '../redux/actions';
+import { fetchfilterByMeasurementIdMeasureds, setView } from '../redux/actions';
 import Progress from '../components/progress';
 import MeasuredsSelector from '../components/measuerdsSelector';
 import { progProps } from '../helpers/progressData';
@@ -13,6 +13,7 @@ const ProgressCont = () => {
 
   useEffect(() => {
     dispatch(fetchfilterByMeasurementIdMeasureds(state.user.id));
+    dispatch(setView(true));
   }, []);
 
   const renderProgress = () => {
@@ -29,16 +30,14 @@ const ProgressCont = () => {
       const { goals } = state.filteredMeasureds;
       console.log(goals);
       const myProps = progProps(myFilteredMeasureds, goals, mid);
-      const measuredIds = state.filteredMeasureds.goals.map((goal) => goal.measurement_id);
-      console.log(measuredIds.indexOf(mid));
-      console.log(goals[mid - 1]);
+      console.log(myProps.getData);
 
       return (
         <Progress
           progressVal={Math.round(myProps.progressVal)}
           togo={Math.round(myProps.togo)}
           day={Math.round(myProps.day)}
-          measureds={myProps.measureds}
+          data={myProps.getData}
           baseline={Math.round(myProps.baseline)}
           goalValue={Math.round(myProps.goalValue)}
           measurementName={state.measurements[mid - 1].name}
@@ -47,7 +46,6 @@ const ProgressCont = () => {
           measurementUnit={state.measurements[mid - 1].unit}
           maxVal={Math.round(myProps.maxVal)}
         />
-
       );
     }
 
@@ -68,6 +66,7 @@ const ProgressCont = () => {
 const mapStateToProps = (state) => ({
   filteredMeasureds: state.filteredMeasureds,
   measurements: state.measurements,
+  view: state.view,
 });
 
 export default connect(mapStateToProps)(ProgressCont);

@@ -7,7 +7,8 @@ import goals from './goals';
 import logingUser from './logingUser';
 import progressProps from './progressProps';
 import values from './values';
+import view from './view';
 
 export default combineReducers({
-  user, measurements, measureds, filteredMeasureds, goals, logingUser, progressProps, values,
+  user, measurements, measureds, filteredMeasureds, goals, logingUser, progressProps, values, view,
 });

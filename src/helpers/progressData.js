@@ -18,6 +18,14 @@ export const goalsQuans = (goals, mid) => {
   return myGoal;
 };
 
+const getData = (measureds) => {
+  const result = [['days', 'measureds', { role: 'style' }]];
+  measureds.forEach((measured, index) => {
+    result.push([`${index + 1}`, measured, 'color: #e5e4e2']);
+  });
+  return result;
+};
+
 export const progProps = (myFilteredMeasureds, goals, mid) => {
   const goal = goals.length > 0 ? goalsQuans(goals, parseInt(mid, 10)) : null;
   const baseline = myFilteredMeasureds ? myFilteredMeasureds[0].value : null;
@@ -37,6 +45,7 @@ export const progProps = (myFilteredMeasureds, goals, mid) => {
     score: score < 1 ? 0 : score,
     measurementUnit: null,
     maxValue: maxVal(myFilteredMeasureds),
+    getData: getData([...measuredVals(myFilteredMeasureds)]),
   };
 };
 
