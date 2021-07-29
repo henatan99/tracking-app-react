@@ -3,7 +3,7 @@ import { connect, useSelector } from 'react-redux';
 import FooterNav from '../components/footerNav';
 import ProgressCont from '../containers/progressCont';
 
-const TrackPage = () => {
+const ProgressPage = () => {
   const state = useSelector((state) => state);
 
   return (
@@ -17,7 +17,7 @@ const TrackPage = () => {
   );
 };
 
-TrackPage.defaultProps = {
+ProgressPage.defaultProps = {
   user: null,
 };
 
@@ -25,4 +25,4 @@ const mapStateToProps = (state) => ({
   user: state.user,
 });
 
-export default connect(mapStateToProps)(TrackPage);
+export default connect(mapStateToProps)(ProgressPage);
