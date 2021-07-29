@@ -1,9 +1,9 @@
 import { createStore, combineReducers } from 'redux';
-import userReducer from '../../reducers/categories';
-import measurementsReducer from '../../reducers/meals';
-import measuredsReducer from '../../reducers/filter';
-import filteredMeasuredsReducer from '../../reducers/search';
-import goalsReducer from '../../reducers/search';
+import userReducer from '../../redux/reducers/user';
+import measurementsReducer from '../../redux/reducers/measurements';
+import measuredsReducer from '../../redux/reducers/measureds';
+import filteredMeasuredsReducer from '../../redux/reducers/filteredMeasureds';
+import goalsReducer from '../../redux/reducers/goals';
 
 const configureStore = () => {
   const store = createStore(

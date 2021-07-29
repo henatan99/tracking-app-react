@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Measureds should match with snapshot 1`] = `
+<div
+  className="measureds-wrapper"
+>
+  <div
+    className="measureds-list"
+  >
+    <h3>
+      No list
+    </h3>
+  </div>
+  <div
+    className="measureds-selector"
+  >
+    <button
+      className="dir-btn"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="iconify"
+        data-icon="bx:bxs-left-arrow"
+        data-inline="false"
+      />
+    </button>
+    <button
+      className="dir-btn"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        className="iconify"
+        data-icon="bx:bxs-right-arrow"
+        data-inline="false"
+      />
+    </button>
+  </div>
+</div>
+`;
