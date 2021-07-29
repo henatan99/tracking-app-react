@@ -27,11 +27,12 @@ const getData = (measureds) => {
 };
 
 export const progProps = (myFilteredMeasureds, goals, mid) => {
-  const goal = goals.length > 0 ? goalsQuans(goals, parseInt(mid, 10)) : null;
-  const baseline = myFilteredMeasureds ? myFilteredMeasureds[0].value : null;
-  const current = myFilteredMeasureds[myFilteredMeasureds.length - 1].value;
-  const score = (current - baseline) / (goal.quantity - baseline) > 1
-    ? 1 : (current - baseline) / (goal.quantity - baseline);
+  const goal = goals && goals.length > 0 ? goalsQuans(goals, parseInt(mid, 10)) : null;
+  const baseline = myFilteredMeasureds && myFilteredMeasureds.length > 0
+    ? myFilteredMeasureds[0].value : null;
+  const current = myFilteredMeasureds && myFilteredMeasureds.length > 0
+    ? myFilteredMeasureds[myFilteredMeasureds.length - 1].value : null;
+  const score = goal && goal.length > 0 ? (current - baseline) / (goal.quantity - baseline) : null;
 
   return {
     progressVal: current - baseline,
