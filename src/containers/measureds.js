@@ -11,14 +11,13 @@ const Measureds = () => {
   const dispatch = useDispatch();
   const { mid } = useParams();
   const state = useSelector((state) => state);
-  console.log(state.filteredMeasureds);
 
   useEffect(() => {
     dispatch(fetchfilterByMeasurementIdMeasureds(state.user.id));
   }, []);
 
   const renderMeasureds = () => {
-    if (state.filteredMeasureds.loading || state.goals.loading) {
+    if (state.filteredMeasureds.loading) {
       return (
         <div className="loader-div">
           <span className="loader" />

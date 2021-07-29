@@ -1,9 +1,21 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
+import userReducer from '../../reducers/categories';
+import measurementsReducer from '../../reducers/meals';
+import measuredsReducer from '../../reducers/filter';
+import filteredMeasuredsReducer from '../../reducers/search';
+import goalsReducer from '../../reducers/search';
 
-import rootReducer from '../../redux/reducers';
+const configureStore = () => {
+  const store = createStore(
+    combineReducers({
+      user: userReducer,
+      measurements: measurementsReducer,
+      measureds: measuredsReducer,
+      filteredMeasureds: filteredMeasuredsReducer,
+      goals: goalsReducer,
+    }),
+  );
+  return store;
+};
 
-const storeFactory = (initialState) => {
-   return createStore(rootReducer, initialState);
-}
-
-export default storeFactory;
+export default configureStore;

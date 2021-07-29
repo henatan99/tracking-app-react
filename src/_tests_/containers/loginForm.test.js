@@ -6,10 +6,19 @@ import Enzyme, { shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import LoginForm from '../../containers/loginForm';
 import { loginUser } from '../../redux/actions';
+import storeFactory from '../factories/storeFactory';
 
 const mockStore = configureStore([]);
 
 Enzyme.configure({ adapter: new Adapter() });
+
+// const setup = (initialState={}) => {
+//   const store = storeFactory(initialState)
+//   const wrapper = mount(<Provider store={store}><LoginForm /></Provider>)
+//   console.log(wrapper.debug());
+// }
+
+// setup();
 
 describe('LoginForm', () => {
   let store;
@@ -20,7 +29,7 @@ describe('LoginForm', () => {
       myState: 'sample text',
     });
 
-    store.dispatch = jest.fn();
+    // store.dispatch = jest.fn();
     wrapper = shallow(<LoginForm />);
     component = renderer.create(
       <Provider store={store}>
@@ -32,7 +41,7 @@ describe('LoginForm', () => {
   it('does not reload page after submission', () => {
     const event = { preventDefault: () => {} };
     jest.spyOn(event, 'preventDefault');
-    wrapper.find('form').simulate('submit', event);
+    component.find('form').simulate('submit', event);
     expect(event.preventDefault).toBeCalled();
   })
 
@@ -40,14 +49,14 @@ describe('LoginForm', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  it('should dispatch an action on button click', () => {
-    renderer.act(() => {
-      component.root.findByType('form').props.onSubmit();
-    });
+  // it('should dispatch an action on button click', () => {
+  //   renderer.act(() => {
+  //     component.root.findByType('form').props.onSubmit();
+  //   });
 
-    expect(store.dispatch).toHaveBeenCalledTimes(1);
-    expect(store.dispatch).toHaveBeenCalledWith(
-      loginUser({ payload: 'sample text' }),
-    );
-  });
+  //   expect(store.dispatch).toHaveBeenCalledTimes(1);
+  //   expect(store.dispatch).toHaveBeenCalledWith(
+  //     loginUser({ payload: 'sample text' }),
+  //   );
+  // });
 });

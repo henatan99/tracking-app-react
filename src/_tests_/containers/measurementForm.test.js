@@ -26,7 +26,7 @@ describe('MeasurementForm', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  it('should dispatch an action on button click', () => {
+  // it('should dispatch an action on button click', () => {
 
-  });
+  // });
 });
