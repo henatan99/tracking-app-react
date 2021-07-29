@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-// import { connect } from 'react-redux';
 import {
   BrowserRouter as Router, Switch, Route,
 } from 'react-router-dom';
@@ -52,9 +51,4 @@ function App() {
   );
 }
 
-// const mapStateToProps = (state) => ({
-//   user: state.user,
-// });
-
-// export default connect(mapStateToProps)(App);
 export default App;

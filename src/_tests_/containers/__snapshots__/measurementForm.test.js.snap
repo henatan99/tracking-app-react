@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MeasurementForm should render with given state from Redux store 1`] = `
+<div
+  className="measurement"
+>
+  <header
+    className="measurement-header"
+  >
+    <h3>
+      , Measure your 
+    </h3>
+  </header>
+  <div
+    className="measurement-form-wrapper"
+  >
+    <form
+      className="measurement-form"
+      onSubmit={[Function]}
+    >
+      <input
+        className="measurement-input"
+        onChange={[Function]}
+        placeholder="0.00"
+        type="text"
+      />
+      <button
+        className="measurement-button"
+        type="submit"
+      >
+        <span
+          className="iconify"
+          data-icon="bx:bxs-badge-check"
+          data-inline="false"
+        />
+      </button>
+    </form>
+    <div
+      className="measurement-selector"
+    >
+      <button
+        className="measurement-selector-btn1"
+        onClick={[Function]}
+        type="button"
+      >
+        Previous
+      </button>
+      <button
+        className="measurement-selector-btn2"
+        onClick={[Function]}
+        type="button"
+      >
+        Next
+      </button>
+    </div>
+  </div>
+  <p>
+    1
+  </p>
+</div>
+`;

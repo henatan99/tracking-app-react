@@ -14,7 +14,7 @@ const MeasuredsByDatePage = () => {
       <header className="measurement-page-header">
         <h3>Track.It</h3>
       </header>
-      <h1 className="measureds-by-date-date">{ formattedDate(date) }</h1>
+      <h1 className="measureds-by-date-date">{ date ? formattedDate(date) : '' }</h1>
       <MeasuredsByDate />
       <FooterNav user={state.user} />
     </div>
