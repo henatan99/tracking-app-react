@@ -1,41 +1,30 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
-import configureStore from 'redux-mock-store';
+// import configureStore from 'redux-mock-store';
 import Enzyme, { shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import LoginForm from '../../containers/loginForm';
-import { loginUser } from '../../redux/actions';
-import storeFactory from '../factories/storeFactory';
+// import { loginUser } from '../../redux/actions';
+import createTestStore from '../factories/storeFactory';
 
-const mockStore = configureStore([]);
+// const mockStore = configureStore([]);
 
 Enzyme.configure({ adapter: new Adapter() });
 
-// const setup = (initialState={}) => {
-//   const store = storeFactory(initialState)
-//   const wrapper = mount(<Provider store={store}><LoginForm /></Provider>)
-//   console.log(wrapper.debug());
-// }
-
-// setup();
-
 describe('LoginForm', () => {
-  let store;
-  let wrapper;
+  // let store;
 
   beforeEach(() => {
-    store = mockStore({
-      myState: 'sample text',
-    });
-
+    // store = createTestStore();
+    component = mount(<LoginForm />);
     // store.dispatch = jest.fn();
-    wrapper = shallow(<LoginForm />);
-    component = renderer.create(
-      <Provider store={store}>
-        {wrapper}
-      </Provider>,
-    );
+    // wrapper = shallow(<LoginForm />);
+    // component = renderer.create(
+    //   <Provider store={store}>
+    //     {wrapper}
+    //   </Provider>,
+    // );
   });
 
   it('does not reload page after submission', () => {
@@ -43,10 +32,6 @@ describe('LoginForm', () => {
     jest.spyOn(event, 'preventDefault');
     component.find('form').simulate('submit', event);
     expect(event.preventDefault).toBeCalled();
-  })
-
-  it('should render with given state from Redux store', () => {
-    expect(component.toJSON()).toMatchSnapshot();
   });
 
   // it('should dispatch an action on button click', () => {

@@ -6,20 +6,19 @@ import ProgressPage from '../../routes/ProgressPage';
 import createTestStore from '../factories/storeFactory';
 
 describe('Measureds', () => {
-    let store;
-    beforeEach(() => {
-      store = createTestStore();
-    });
-    test('should match with snapshot', () => {
-      const tree = renderer
-        .create(
-          <Provider store={store}>
-            <MemoryRouter>
-              <ProgressPage />
-            </MemoryRouter>
-          </Provider>,
-        ).toJSON();
-      expect(tree).toMatchSnapshot();
-    });
+  let store;
+  beforeEach(() => {
+    store = createTestStore();
   });
-  
+  test('should match with snapshot', () => {
+    const tree = renderer
+      .create(
+        <Provider store={store}>
+          <MemoryRouter>
+            <ProgressPage />
+          </MemoryRouter>
+        </Provider>,
+      ).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});

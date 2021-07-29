@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
-import { connect, useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 import { loginUser, setMeasurements } from '../redux/actions';
 import { saveState } from '../redux/services/localStorage';
 
@@ -10,7 +10,6 @@ const LoginForm = ({ loginUser, setMeasurements }) => {
   const [loggingIn, setLoggingIn] = useState(false);
   const [username, setUsername] = useState('');
   const [errors, setErrors] = useState(null);
-  const state = useSelector((state) => state);
   const history = useHistory();
 
   function login() {
@@ -34,7 +33,6 @@ const LoginForm = ({ loginUser, setMeasurements }) => {
       saveState(response.data.measurements, 'measurements');
       localStorage.setItem('token', response.data.jwt);
       if (response.data.success && response.data.measurements) {
-        console.log(`from login: ${state.measurements}`);
         history.push(`${response.data.user.id}/measurement`);
       }
     }).catch((errors) => {

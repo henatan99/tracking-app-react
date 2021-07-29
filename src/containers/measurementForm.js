@@ -44,7 +44,6 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
     history.push(`/${user.id}/track/${measurementId}`);
   };
 
-  console.log(measurements);
   const handleForward = (e) => {
     e.preventDefault();
     if (measurementId < len - 1) {

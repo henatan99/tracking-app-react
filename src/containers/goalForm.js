@@ -36,7 +36,6 @@ const GoalForm = ({ createGoal, user, measurements }) => {
         setStatus(true);
       })
       .catch((error) => {
-        console.log(error);
         setErrors(error);
         setIsLoading(false);
         setStatus(false);
@@ -49,8 +48,6 @@ const GoalForm = ({ createGoal, user, measurements }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(dayOne);
-    alert(measurementId);
     settingGoal();
     setQuantity(null);
     setDayOne(null);
