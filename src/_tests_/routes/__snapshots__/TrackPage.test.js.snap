@@ -8,82 +8,45 @@ exports[`Measureds should match with snapshot 1`] = `
     className="measurement-page-header"
   >
     <h3>
-      More
+      Track.It
     </h3>
   </header>
   <div
-    className="goal"
+    className="measureds-wrapper"
   >
-    <h1
-      className="goal-title"
+    <div
+      className="measureds-list"
     >
-      Set Your Goals
-    </h1>
-    <form
-      className="goal-form"
-      onSubmit={[Function]}
+      <h3>
+        No list
+      </h3>
+    </div>
+    <div
+      className="measureds-selector"
     >
-      <div
-        className="goal-form-inner-div"
+      <button
+        className="dir-btn"
+        onClick={[Function]}
+        type="button"
       >
-        <h3
-          className="goal-form-label"
-        >
-          Measurement
-        </h3>
-        <select
-          className="goal-form-select"
-          onChange={[Function]}
+        <span
+          className="iconify"
+          data-icon="bx:bxs-left-arrow"
+          data-inline="false"
         />
-      </div>
-      <div
-        className="goal-form-inner-div"
+      </button>
+      <button
+        className="dir-btn"
+        onClick={[Function]}
+        type="button"
       >
-        <h3
-          className="goal-form-input-title"
-        >
-          Value
-        </h3>
-        <input
-          className="goal-form-input"
-          onChange={[Function]}
-          type="text"
+        <span
+          className="iconify"
+          data-icon="bx:bxs-right-arrow"
+          data-inline="false"
         />
-      </div>
-      <div
-        className="goal-form-inner-div"
-      >
-        <h3
-          className="goal-form-input-title"
-        >
-          Dates
-        </h3>
-        <input
-          className="goal-form-date-input"
-          onChange={[Function]}
-          placeholder="Day One"
-          type="date"
-        />
-        <input
-          className="goal-form-date-input"
-          onChange={[Function]}
-          placeholder="Day Last"
-          type="date"
-        />
-      </div>
-      <div
-        className="goal-form-inner-div"
-      >
-        <button
-          className="goal-form-btn"
-          type="submit"
-        >
-          Submit
-        </button>
-      </div>
-      <h3 />
-      <h3 />
-    </form>
+      </button>
+    </div>
   </div>
   <nav
     className="footer-nav"

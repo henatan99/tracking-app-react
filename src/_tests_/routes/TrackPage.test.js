@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import { MemoryRouter } from 'react-router-dom';
-import GoalFormPage from '../../routes/GoalFormPage';
+import TrackPage from '../../routes/TrackPage';
 import createTestStore from '../factories/storeFactory';
 
 describe('Measureds', () => {
@@ -15,7 +15,7 @@ describe('Measureds', () => {
         .create(
           <Provider store={store}>
             <MemoryRouter>
-              <GoalFormPage />
+              <TrackPage />
             </MemoryRouter>
           </Provider>,
         ).toJSON();

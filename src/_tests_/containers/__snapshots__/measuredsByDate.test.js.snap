@@ -2,17 +2,10 @@
 
 exports[`Measureds should match with snapshot 1`] = `
 <div
-  className="measureds-wrapper"
+  className="measureds-by-date-wrapper"
 >
   <div
-    className="measureds-list"
-  >
-    <h3>
-      No list
-    </h3>
-  </div>
-  <div
-    className="measureds-selector"
+    className="measureds-date-selector"
   >
     <button
       className="dir-btn"
@@ -37,5 +30,8 @@ exports[`Measureds should match with snapshot 1`] = `
       />
     </button>
   </div>
+  <div
+    className="measureds-by-date"
+  />
 </div>
 `;
