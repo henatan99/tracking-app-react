@@ -98,7 +98,6 @@ Give a :star:️ if you like this project!
 ## Acknowledgment 
 
 - Facebook team who created creat-react-app API 
-- [themealdb API service](www.themealdb.com/api)
 - [Behance](www.behance.net) for cool design references 
 
 ## :memo: License

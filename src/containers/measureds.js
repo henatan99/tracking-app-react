@@ -40,9 +40,7 @@ const Measureds = () => {
             filterdByMeasurement.length > 1 && index > 0
               ? measured.value - filterdByMeasurement[index - 1].value : 0
           }
-          progressVal={(
-            measured.value - myProps.goal) / (measured.value - filterdByMeasurement[0].value
-          )}
+          progressVal={myProps.score * 100}
           userId={state.user.id}
           unit={state.measurements[measured.measurement_id - 1].unit}
           key={measured.id || index}
