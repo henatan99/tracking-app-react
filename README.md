@@ -46,7 +46,7 @@ To get a local copy up and running, please follow the below steps.
 `git clone git@github.com:henatan99/tracking-app-react.git`
 
 - cd to the project directory 
-`cd catalogue-of-recipes`
+`cd tracking-app-react`
 
 - Install dependancies 
 `npm install`
