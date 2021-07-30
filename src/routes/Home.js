@@ -1,14 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import HeaderNav from '../components/headerNav';
 
 const Home = () => (
   <div className="home">
-    <Link to="/login">
-      <span>Login</span>
-    </Link>
-    <Link to="/signup">
-      <span>SignUp</span>
-    </Link>
+    <HeaderNav />
   </div>
 );
 
