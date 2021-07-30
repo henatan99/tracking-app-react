@@ -65,7 +65,13 @@ code {
   color: white;
   background-color: #286dcf;
 }
+/* header nav */
 
+.header-nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
 
 /* footer nav */
 .footer-nav {
@@ -74,7 +80,7 @@ code {
   bottom: 0;
 }
 
-.footer-nav-ul {
+.footer-nav-ul, .header-nav-ul {
   width: 100%;
   list-style: none;
   display: flex;
@@ -85,11 +91,20 @@ code {
   margin-block-end: 0;
 }
 
+.header-nav-ul {
+  background-color: #313944;
+  justify-content: flex-end;
+}
+
+.header-nav-li {
+  margin: 0 1rem 0 1rem;
+}
+
 .footer-nav-li {
   width: 25%;
 }
 
-.footer-nav-li a {
+.footer-nav-li a, .header-nav-li a {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,6 +120,11 @@ code {
   background-color: #5bb5e5;
 }
 
+/* Home */
+
+.home-main {
+  padding: 5rem 3rem 3rem 3rem;
+}
 /* Measurement */
 
 .measurement-page {

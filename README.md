@@ -29,7 +29,7 @@ The webapp has 6 main pages:
 - `Redux` | `MiidleWares` | `Backend API` | `npm` | `CSS` | `ES6` 
 
 ## Live demo [Heroku]
-[Catalogue of Recipes](https://hen-recipes.herokuapp.com/)
+[tracking-app-react](https://tracking-app-react1.herokuapp.com/)
 
 
 ## Getting Started

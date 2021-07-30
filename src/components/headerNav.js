@@ -1,17 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const HeaderNav = () => (
   <nav className="header-nav">
-    <ul className="footer-nav-ul">
-      <li className="footer-nav-li">
-        <Link to={`/login`}>
+    <ul className="header-nav-ul">
+      <li className="header-nav-li">
+        <Link to="/">
+          <span>Home</span>
+        </Link>
+      </li>
+      <li className="header-nav-li">
+        <Link to="/login">
           <span>Login</span>
         </Link>
       </li>
-      <li className="footer-nav-li">
-        <Link to={`/signup`}>
+      <li className="header-nav-li">
+        <Link to="/signup">
           <span>SignUp</span>
         </Link>
       </li>
