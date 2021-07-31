@@ -28,7 +28,7 @@ code {
 
 .login-page {
   background-color: #41b5e8;
-  height: 100vh;
+  height: 80vh;
   padding-top: 20vh;
 }
 
@@ -36,6 +36,7 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 80vh;
 }
 
 .login-form {
@@ -652,5 +653,4 @@ code {
   font-weight: bolder;
   color: white;
   background-color: #5bb5e5;
-  opacity: 50%;
 }
