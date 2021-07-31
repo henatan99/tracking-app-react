@@ -39,7 +39,7 @@ const ProgressCont = () => {
           goalValue={Math.round(myProps.goalValue)}
           measurementName={state.measurements[mid - 1].name}
           current={myProps.current}
-          score={Math.round(myProps.score * 100)}
+          score={myProps.score < 0 ? 0 : Math.round(myProps.score * 100)}
           measurementUnit={state.measurements[mid - 1].unit}
           maxVal={Math.round(myProps.maxVal)}
         />

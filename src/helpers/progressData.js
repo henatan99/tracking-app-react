@@ -43,7 +43,7 @@ export const progProps = (myFilteredMeasureds, goals, mid) => {
     goalValue: goal && goal.quantity ? goal.quantity : null,
     measurementName: null,
     current,
-    score,
+    score: score > 1 ? 1 : score,
     measurementUnit: null,
     maxValue: maxVal(myFilteredMeasureds),
     getData: getData([...measuredVals(myFilteredMeasureds)]),
