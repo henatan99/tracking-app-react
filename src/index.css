@@ -66,6 +66,7 @@ code {
   color: white;
   background-color: #286dcf;
 }
+
 /* header nav */
 
 .header-nav {
@@ -81,7 +82,8 @@ code {
   bottom: 0;
 }
 
-.footer-nav-ul, .header-nav-ul {
+.footer-nav-ul,
+.header-nav-ul {
   width: 100%;
   list-style: none;
   display: flex;
@@ -105,7 +107,8 @@ code {
   width: 25%;
 }
 
-.footer-nav-li a, .header-nav-li a {
+.footer-nav-li a,
+.header-nav-li a {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,6 +129,7 @@ code {
 .home-main {
   padding: 5rem 3rem 3rem 3rem;
 }
+
 /* Measurement */
 
 .measurement-page {
@@ -144,7 +148,6 @@ code {
 
 .measurement-header {
   background-color: #fdfdff;
-  height: fit-content;
   padding: 1rem 0 1rem 0;
   color: #c1c6cd;
 }
@@ -213,7 +216,7 @@ code {
 .measurement-selector-btn2 {
   width: 46%;
   height: 3rem;
-  background-color: #97E494;
+  background-color: #97e494;
   border: none;
   color: #fdfdfd;
   font-weight: 700;
@@ -269,6 +272,7 @@ code {
   color: #556b82;
   font-size: 20px;
 }
+
 /* measureds */
 
 .measureds-wrapper {
@@ -324,6 +328,7 @@ code {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
 /* measureds by date */
 
 .measureds-by-date-date {
@@ -355,8 +360,6 @@ code {
   background-color: #f3f4f6;
 }
 
-
-
 /* measured-by-date */
 
 .measured-by-date {
@@ -376,23 +379,10 @@ code {
   justify-content: space-between;
 }
 
-.measured-by-date-info {
-
-}
-
-.measured-by-date-name {
-
-}
-
-.measured-by-date-measured {
-  
-}
-
 .measured-by-date-img-div {
   width: 40px;
   height: 40px;
   color: #9ed8f2;
-  font: bolder;
 }
 
 .measured-by-date-img {
@@ -407,7 +397,6 @@ code {
 
 /* Progress Bar */
 .progress-bar {
-  height: fit-content;
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -450,18 +439,6 @@ code {
   align-items: center;
   background-color: #fdfdfd;
   padding: 2% 0 2% 0;
-} 
-
-.progress-togo {
-
-}
-
-.progress-bar {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  background-color: #ebeef1;
 }
 
 .progress-bar-wrapper {
@@ -491,14 +468,16 @@ code {
   justify-content: space-between;
 }
 
-.current, .score {
+.current,
+.score {
   width: 48%;
   background-color: #fdfdfd;
   font-size: 16px;
   padding-bottom: 1rem;
 }
 
-.progress-current, .progress-score {
+.progress-current,
+.progress-score {
   font-size: 26px;
   color: #8be187;
   font-weight: 700;
@@ -551,7 +530,7 @@ code {
   width: 20px;
   height: 24px;
   border-radius: 10px;
-  background-color:#eeeff1;
+  background-color: #eeeff1;
 }
 
 .user-img-body {
@@ -571,7 +550,8 @@ code {
 .more-ul {
   background-color: #eeeff1;
   list-style: none;
-  display: flex;flex-direction: column;
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   margin-block-start: 0;
@@ -580,7 +560,6 @@ code {
 }
 
 .more-li {
-  
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -633,7 +612,9 @@ code {
   color: #76808a;
 }
 
-.goal-form-select, .goal-form-input, .goal-form-date-input {
+.goal-form-select,
+.goal-form-input,
+.goal-form-date-input {
   height: 2rem;
   width: 60%;
   border-color: #ebebec;

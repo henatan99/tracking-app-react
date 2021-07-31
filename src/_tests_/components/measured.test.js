@@ -1,8 +1,5 @@
 import React from 'react';
-import Enzyme, { shallow, mount } from 'enzyme';
-
-import { create } from 'react-test-renderer';
-import { MemoryRouter } from 'react-router-dom';
+import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import Measured from '../../components/measured';

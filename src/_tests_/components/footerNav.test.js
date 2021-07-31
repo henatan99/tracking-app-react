@@ -1,8 +1,6 @@
 import React from 'react';
-import { create } from 'react-test-renderer';
-import Enzyme, { shallow, mount } from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
 
-import { MemoryRouter } from 'react-router-dom';
 import Adapter from 'enzyme-adapter-react-16';
 
 import FooterNav from '../../components/footerNav';
