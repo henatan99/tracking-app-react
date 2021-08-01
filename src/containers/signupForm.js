@@ -37,8 +37,8 @@ const SignupForm = ({ loginUser }) => {
       }
     }).catch((errors) => {
       setSigningUp(false);
-      setErrors(errors);
-      console.log(errors);
+      setErrors(JSON.stringify(errors));
+      console.log(JSON.stringify(errors));
     });
   }
 
@@ -64,7 +64,8 @@ const SignupForm = ({ loginUser }) => {
         <br />
         <button type="submit" className="login-button">{!signingUp ? 'Signup' : 'Signing Up...'}</button>
         <span>
-          {errors ? 'Username Invalid or taken' : ''}
+          {errors && JSON.parse(errors).message === 'Network Error' ? JSON.parse(errors).message : ''}
+          {errors && JSON.parse(errors).message !== 'Network Error' ? 'Username invalid or taken!' : ''}
         </span>
       </form>
     </div>
