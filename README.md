@@ -10,7 +10,7 @@ The webapp has 6 main pages:
 - `MorePage` which has nav list to link to GoalFoam page and Logout
 - `GoalFormPage` which has a form to set goal
 
-## Pages and fnunctionalities
+## Pages and functionalities
 
 ### HomePage
 ![Screenshot](docs/home.gif)
