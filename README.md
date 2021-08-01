@@ -10,43 +10,45 @@ The webapp has 6 main pages:
 - `MorePage` which has nav list to link to GoalFoam page and Logout
 - `GoalFormPage` which has a form to set goal
 
-## HomePage
+## Pages and fnunctionalities
+
+### HomePage
 ![Screenshot](docs/home.gif)
 - The home page is the first landing page of the app. It presents app introduction and a header nav with links to HomePage itself, LoginPage and SignupPage.
-## LoginPage
+### LoginPage
 ![Screenshot](docs/login.gif)
 - The login page has a login form. Signed up users can login. Users can login only with their registered username.
 - Error messages: 
     - `username invalid` will be rendered if unregistered user tries to login.
     - `Network error` will be displayed if there is a connection problem
-## SignupPage
+### SignupPage
 ![Screenshot](docs/signup.gif)
 - The signup page has a signup form. Users can sign up only providing username which is not taken.
 - Error messages: 
     - `username invalid or taken` will be rendered if it is taken or of invalid format.
     - `Network error` will be displayed if there is a connection problem
-## MeasurementPage
+### MeasurementPage
 ![Screenshot](docs/measurement.gif)
 - The measurement page has an input field to enter the measured value by the user.
 - There are two selector buttons to pick from a number of measurement types. The measurements are supposed to be created by an admin user, but the admin functionality is not implemented yet.
 - If the user has not created a goal before, the measurement form will redirect the user to the goal form page.
-## TrackPage
+### TrackPage
 ![Screenshot](docs/track.png)
 - The track page displays the list of all measureds by the user for a kind of measurement. The user can navigate through measured lists of various measurement types using selector buttons. 
 - Each measured list item has a link which redirects to the measuredsByDate page which displays measureds of different measurement types corresponding to the date of the selected measured list. 
-## MeasuredsByDatePage
+### MeasuredsByDatePage
 ![Screenshot](docs/trackByDate.png)
 - This page displays all the measureds list corresponding to a particular day. 
 - The user can navigate through differnt measured lists filtered by date using selector buttons.
 - The measured list items in this page are linked to Progress page, which displays detailed progress data for a measurement kind. 
-## ProgressPage
+### ProgressPage
 ![Screenshot](docs/progress1.png)  ![Screenshot](docs/progress2.png)
 - The progress page displays detailed data of the user's progress based on the goal set and the records of measureds. It has both numerical and graphical displays for better user experience. 
 - It has selector buttons to navigate through progresses of various measurement kinds. 
-## MorePage
+### MorePage
 ![Screenshot](docs/more.png)
 - The More page has nav links to various pages. For now only the goalForm and logout nav links are implemented. 
-## GoalFormPage
+### GoalFormPage
 ![Screenshot](docs/setGoals.png)
 - The goal form page has a form with input fields to create a goal: quantity, day_one and day_last. 
 - The user cannot create duplicate goals with same measurement kind.
@@ -54,10 +56,10 @@ The webapp has 6 main pages:
     - `Cannot create goal. Goal exists!` will be displayed if the user tries to create a duplicate goal with same measurement kind.
 - Success messages:
     - `Goal successfully created` will be displayed if success response is returned after goal is successfully created.
-## FooterNav
+### FooterNav
 - The footer nav component is at the top level in app.js. The footer nav links redirect to the corresponding main pages: Measurement, Track, Progress and More.
 
-## Authentication
+### Authentication
 - The app uses JWT authentication token to authorize logged in user. The top level component(App), requires auto_login, which returns JWT authentiation token, which makes the app deny service for unauthorized user. 
 
 ## Languages, tools and frameworks
