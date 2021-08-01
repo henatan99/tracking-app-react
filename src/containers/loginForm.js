@@ -37,7 +37,7 @@ const LoginForm = ({ loginUser, setMeasurements }) => {
       }
     }).catch((errors) => {
       setLoggingIn(false);
-      setErrors(errors);
+      setErrors(JSON.stringify(errors));
       console.log(errors);
     });
   }
@@ -65,7 +65,7 @@ const LoginForm = ({ loginUser, setMeasurements }) => {
         <button type="submit" className="login-button">
           {!loggingIn ? 'Login' : 'Logging in...'}
         </button>
-        <span>{errors ? 'Username Invalid' : ''}</span>
+        <span>{errors ? JSON.parse(errors).message || 'Invalid username' : ''}</span>
       </form>
     </div>
   );
