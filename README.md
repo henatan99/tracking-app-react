@@ -54,8 +54,13 @@ The webapp has 6 main pages:
     - `Cannot create goal. Goal exists!` will be displayed if the user tries to create a duplicate goal with same measurement kind.
 - Success messages:
     - `Goal successfully created` will be displayed if success response is returned after goal is successfully created.
-## Built With
+## FooterNav
+- The footer nav component is at the top level in app.js. The footer nav links redirect to the corresponding main pages: Measurement, Track, Progress and More.
 
+## Authentication
+- The app uses JWT authentication token to authorize logged in user. The top level component(App), requires auto_login, which returns JWT authentiation token, which makes the app deny service for unauthorized user. 
+
+## Languages, tools and frameworks
 - `Node.js` | `React` | `React-DOM` | `React-Create-App` | `Hooks` | `Routes` 
 - `Redux` | `MiidleWares` | `Backend API` | `npm` | `CSS` | `ES6` 
 
