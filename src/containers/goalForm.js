@@ -90,7 +90,7 @@ const GoalForm = ({ createGoal, user, measurements }) => {
         <div className="goal-form-inner-div">
           <button type="submit" className="goal-form-btn">{!isLoading ? 'Submit' : 'Loading...'}</button>
         </div>
-        <h3>{errors ? 'Goal not created: It exists!' : null}</h3>
+        <h3>{errors ? 'Goal not created: Input error or It exists!' : null}</h3>
         <h3>{status ? 'Goal successfuly created!' : null}</h3>
       </form>
     </div>
