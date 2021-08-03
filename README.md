@@ -1,6 +1,6 @@
 # Tracking App FrontEnd  
 
-This project builds the a front end React app for Tracking users' health by setting goals and taking measurements of the essential health indicators.
+This project builds a front end React app for Tracking users' health by setting goals and taking measurements of the essential health indicators.
 The webapp has 6 main pages:
 - `Login` and `Logout` Pages
 - `MeasurementForm` Page which has a from to input measurement 
@@ -13,16 +13,16 @@ The webapp has 6 main pages:
 ## Pages and functionalities
 
 ### HomePage
-![Screenshot](docs/home.gif)
+![Screenshot](docs/home.png)
 - The home page is the first landing page of the app. It presents app introduction and a header nav with links to HomePage itself, LoginPage and SignupPage.
 ### LoginPage
-![Screenshot](docs/login.gif)
+![Screenshot](docs/login.png)
 - The login page has a login form. Signed up users can login. Users can login only with their registered username.
 - Error messages: 
     - `username invalid` will be rendered if unregistered user tries to login.
     - `Network error` will be displayed if there is a connection problem
 ### SignupPage
-![Screenshot](docs/signup.gif)
+![Screenshot](docs/signup.png)
 - The signup page has a signup form. Users can sign up only providing username which is not taken.
 - Error messages: 
     - `username invalid or taken` will be rendered if it is taken or of invalid format.
@@ -39,7 +39,7 @@ The webapp has 6 main pages:
 ### MeasuredsByDatePage
 ![Screenshot](docs/trackByDate.png)
 - This page displays all the measureds list corresponding to a particular day. 
-- The user can navigate through differnt measured lists filtered by date using selector buttons.
+- The user can navigate through different measured lists filtered by date using selector buttons.
 - The measured list items in this page are linked to Progress page, which displays detailed progress data for a measurement kind. 
 ### ProgressPage
 ![Screenshot](docs/progress1.png)  ![Screenshot](docs/progress2.png)
