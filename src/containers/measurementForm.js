@@ -34,7 +34,7 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
         }
       })
       .catch((error) => {
-        setErrors(error);
+        setErrors(JSON.stringify(error));
       });
   }
 
@@ -78,6 +78,7 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
             className="measurement-input"
             placeholder="0.00"
           />
+          <span>{errors ? JSON.parse(errors).message || 'Invalid username' : ''}</span>
           <button type="submit" className="measurement-button">
             <span className="iconify" data-icon="bx:bxs-badge-check" data-inline="false" />
           </button>
