@@ -67,7 +67,7 @@ The webapp has 6 main pages:
 - `Redux` | `MiidleWares` | `Backend API` | `npm` | `CSS` | `ES6` 
 
 ## Live demo [Heroku]
-[tracking-app-react](https://tracking-app-react1.herokuapp.com/)
+[tracking-app-react](https://tracking-app-react.herokuapp.com/)
 
 ## Backend API repo
 [tracking-app-api](https://github.com/henatan99/tracking-app-api)
