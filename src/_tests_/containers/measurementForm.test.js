@@ -25,8 +25,4 @@ describe('MeasurementForm', () => {
   it('should render with given state from Redux store', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
-
-  // it('should dispatch an action on button click', () => {
-
-  // });
 });

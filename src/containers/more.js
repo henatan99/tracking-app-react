@@ -39,16 +39,11 @@ const More = ({ username, userId }) => {
 };
 
 More.defaultProps = {
-  // user: null,
   username: '',
   userId: null,
 };
 
 More.propTypes = {
-  // user: PropTypes.shape({
-  //   id: PropTypes.number,
-  //   username: PropTypes.string,
-  // }),
   username: PropTypes.string,
   userId: PropTypes.number,
 };

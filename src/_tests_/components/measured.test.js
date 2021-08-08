@@ -16,12 +16,4 @@ describe('Measured', () => {
   it('renders correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
-  // it('should render one <h1>', () => {
-  //   const wrapper = mount(
-  //     <MemoryRouter>
-  //       <Measured auth={{ loading: false }} />
-  //     </MemoryRouter>
-  //   );
-  //   expect(wrapper.find('div').length).toBe(12);
-  // });
 });

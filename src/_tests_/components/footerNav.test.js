@@ -17,13 +17,4 @@ describe('FooterNav', () => {
   it('renders correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
-
-//   it('should render four <li>', () => {
-//     const wrapper = mount(
-//       <MemoryRouter>
-//         <FooterNav />
-//       </MemoryRouter>
-//     );
-//     expect(wrapper.find('li').length).toBe(4);
-//   });
 });
