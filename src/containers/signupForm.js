@@ -38,7 +38,6 @@ const SignupForm = ({ loginUser }) => {
     }).catch((errors) => {
       setSigningUp(false);
       setErrors(JSON.stringify(errors));
-      console.log(JSON.stringify(errors));
     });
   }
 

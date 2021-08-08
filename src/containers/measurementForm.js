@@ -10,6 +10,7 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
   const [value, setValue] = useState(0);
   const [measurementId, setMeasurementId] = useState(1);
   const [nums, setNums] = useState([1, 2]);
+  const [errors, setErrors] = useState();
   const len = measurements.length;
 
   function measurement() {
@@ -33,7 +34,7 @@ const MeasurementForm = ({ createMeasurement, user, measurements }) => {
         }
       })
       .catch((error) => {
-        console.log(error);
+        setErrors(error);
       });
   }
 

@@ -25,7 +25,6 @@ function App() {
       })
         .then((resp) => resp.json())
         .then((data) => {
-          console.log(data);
           saveState(data.user, 'user');
           saveState(data.measurements, 'measurements');
         });

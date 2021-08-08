@@ -122,8 +122,6 @@ export const fetchfilterByMeasurementIdMeasureds = (userId) => async (dispatch) 
       },
     );
 
-    console.log(response);
-
     dispatch({ type: FETCH_FILTERED_MEASUREDS_SUCCESS, payload: response.data });
   } catch (error) {
     dispatch({ type: FETCH_FILTERED_MEASUREDS_FAILURE }, error);

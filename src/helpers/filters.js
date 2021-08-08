@@ -13,7 +13,6 @@ export const FilterByMeasurementId = (measureds, measurementId) => {
   measureds.forEach((measured) => {
     if (measured.measurement_id === measurementId) {
       filteredMeasureds.push(measured);
-      console.log(measured);
     }
   });
   return filteredMeasureds;

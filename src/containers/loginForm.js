@@ -38,7 +38,6 @@ const LoginForm = ({ loginUser, setMeasurements }) => {
     }).catch((errors) => {
       setLoggingIn(false);
       setErrors(JSON.stringify(errors));
-      console.log(errors);
     });
   }
 
