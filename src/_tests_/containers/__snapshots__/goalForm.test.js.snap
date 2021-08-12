@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm should render with given state from Redux store 1`] = `
+<div
+  className="goal"
+>
+  <h1
+    className="goal-title"
+  >
+    Set Your Goals
+  </h1>
+  <form
+    className="goal-form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="goal-form-inner-div"
+    >
+      <h3
+        className="goal-form-label"
+      >
+        Measurement
+      </h3>
+      <select
+        className="goal-form-select"
+        onChange={[Function]}
+      />
+    </div>
+    <div
+      className="goal-form-inner-div"
+    >
+      <h3
+        className="goal-form-input-title"
+      >
+        Value
+      </h3>
+      <input
+        className="goal-form-input"
+        onChange={[Function]}
+        type="text"
+      />
+    </div>
+    <div
+      className="goal-form-inner-div"
+    >
+      <h3
+        className="goal-form-input-title"
+      >
+        Dates
+      </h3>
+      <input
+        className="goal-form-date-input"
+        onChange={[Function]}
+        placeholder="Day One"
+        type="date"
+      />
+      <input
+        className="goal-form-date-input"
+        onChange={[Function]}
+        placeholder="Day Last"
+        type="date"
+      />
+    </div>
+    <div
+      className="goal-form-inner-div"
+    >
+      <button
+        className="goal-form-btn"
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
+    <h3 />
+    <h3 />
+  </form>
+</div>
+`;

@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Measureds should match with snapshot 1`] = `
+<div
+  className="measurement-page"
+>
+  <header
+    className="measurement-page-header"
+  >
+    <h3>
+      More
+    </h3>
+  </header>
+  <div
+    className="goal"
+  >
+    <h1
+      className="goal-title"
+    >
+      Set Your Goals
+    </h1>
+    <form
+      className="goal-form"
+      onSubmit={[Function]}
+    >
+      <div
+        className="goal-form-inner-div"
+      >
+        <h3
+          className="goal-form-label"
+        >
+          Measurement
+        </h3>
+        <select
+          className="goal-form-select"
+          onChange={[Function]}
+        />
+      </div>
+      <div
+        className="goal-form-inner-div"
+      >
+        <h3
+          className="goal-form-input-title"
+        >
+          Value
+        </h3>
+        <input
+          className="goal-form-input"
+          onChange={[Function]}
+          type="text"
+        />
+      </div>
+      <div
+        className="goal-form-inner-div"
+      >
+        <h3
+          className="goal-form-input-title"
+        >
+          Dates
+        </h3>
+        <input
+          className="goal-form-date-input"
+          onChange={[Function]}
+          placeholder="Day One"
+          type="date"
+        />
+        <input
+          className="goal-form-date-input"
+          onChange={[Function]}
+          placeholder="Day Last"
+          type="date"
+        />
+      </div>
+      <div
+        className="goal-form-inner-div"
+      >
+        <button
+          className="goal-form-btn"
+          type="submit"
+        >
+          Submit
+        </button>
+      </div>
+      <h3 />
+      <h3 />
+    </form>
+  </div>
+  <nav
+    className="footer-nav"
+  >
+    <ul
+      className="footer-nav-ul"
+    >
+      <li
+        className="footer-nav-li"
+      >
+        <a
+          href="/undefined/measurement"
+          onClick={[Function]}
+        >
+          <span
+            className="iconify"
+            data-icon="fluent-data-bar-vertical-add-24-filled"
+            data-inline="false"
+          />
+          <span>
+            Add measure
+          </span>
+        </a>
+      </li>
+      <li
+        className="footer-nav-li"
+      >
+        <a
+          href="/undefined/track/1"
+          onClick={[Function]}
+        >
+          <span
+            className="iconify"
+            data-icon="iconoir:stat-up"
+            data-inline="false"
+          />
+          <span>
+            Track it
+          </span>
+        </a>
+      </li>
+      <li
+        className="footer-nav-li"
+      >
+        <a
+          href="/undefined/progress/1"
+          onClick={[Function]}
+        >
+          <span
+            className="iconify"
+            data-icon="carbon:in-progress"
+            data-inline="false"
+          />
+          <span>
+            Your progress
+          </span>
+        </a>
+      </li>
+      <li
+        className="footer-nav-li"
+      >
+        <a
+          href="/undefined/more"
+          onClick={[Function]}
+        >
+          <span
+            className="iconify"
+            data-icon="bi:three-dots"
+            data-inline="false"
+          />
+          <span>
+            More
+          </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

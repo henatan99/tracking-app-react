@@ -1,12 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import configureStore from './redux/store/configStore';
+import { loadState } from './redux/services/localStorage';
+
+const user = loadState('user');
+const measurements = loadState('measurements');
+const goals = loadState('goals');
+
+const initialState = {
+  user,
+  measurements,
+  goals,
+};
+
+const store = configureStore(initialState);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
